@@ -41,6 +41,28 @@
             background-color: rgba(30, 25, 20, 0.3);
         }
 
+        @media (max-width: 768px) {
+            th.original-jp,
+            td.original-jp,
+            th.original-en,
+            td.original-en {
+                display: none;
+            }
+
+            .message-cell {
+                word-break: break-word;
+                overflow-wrap: break-word;
+            }
+
+            .message-table {
+                table-layout: auto;
+            }
+
+            .message-table-container {
+                overflow-x: auto;
+            }
+        }
+
         .decorative-spacer {
             display: flex;
             justify-content: center;
@@ -58,11 +80,11 @@
             font-size: 2rem;
         }
 
-        .date-nav {
+        .section-nav {
             background-color: #1e2118;
             padding: 10px 15px;
             border-right: 1px solid var(--table-border);
-            width: 180px;
+            width: 200px;
             position: fixed;
             left: 0;
             top: 0;
@@ -73,9 +95,41 @@
             transition: transform 0.3s ease;
         }
 
-        .date-nav.collapsed {
-            transform: translateX(-100%);
-        }
+            .section-nav.collapsed {
+                transform: translateX(-100%);
+            }
+
+            .section-nav hr {
+                border: none;
+                border-top: 2px solid var(--accent-color);
+                margin: 10px 0;
+            }
+
+            .section-nav h3 {
+                color: var(--header-color);
+                font-size: 0.85rem;
+                margin-bottom: 12px;
+                text-align: center;
+                border-bottom: 1px solid var(--table-border);
+                padding-bottom: 8px;
+            }
+
+            .section-nav a {
+                color: var(--accent-color);
+                text-decoration: none;
+                padding: 6px 5px;
+                border-radius: 4px;
+                transition: background-color 0.3s;
+                display: block;
+                border-bottom: 1px solid var(--table-border);
+                white-space: nowrap;
+                margin-bottom: 4px;
+                font-size: 0.85rem;
+            }
+
+            .section-nav a:hover {
+                background-color: rgba(184, 140, 90, 0.2);
+            }
 
         .nav-toggle {
             position: fixed;
@@ -94,35 +148,9 @@
             border-radius: 0 4px 4px 0;
         }
 
-        .nav-toggle.moved {
-            left: 160px;
-        }
-
-        .date-nav h3 {
-            color: var(--header-color);
-            font-size: 0.85rem;
-            margin-bottom: 12px;
-            text-align: center;
-            border-bottom: 1px solid var(--table-border);
-            padding-bottom: 8px;
-        }
-
-        .date-nav a {
-            color: var(--accent-color);
-            text-decoration: none;
-            padding: 6px 5px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-            display: block;
-            border-bottom: 1px solid var(--table-border);
-            white-space: nowrap;
-            margin-bottom: 4px;
-            font-size: 0.85rem;
-        }
-
-        .date-nav a:hover {
-            background-color: rgba(184, 140, 90, 0.2);
-        }
+            .nav-toggle.moved {
+                left: 180px;
+            }
 
         .content-wrapper {
             margin-left: 0;
@@ -130,7 +158,7 @@
         }
 
         .content-wrapper.pushed {
-            margin-left: 160px;
+            margin-left: 200px;
         }
 
         .controls {
@@ -172,6 +200,8 @@
 
         main {
             padding: 0;
+            margin-left: 20px;
+            margin-right: 20px;
         }
 
         .conversation {
@@ -371,8 +401,8 @@
         <span class="nav-toggle-text">Quick Nav</span>
     </button>
 
-    <nav class="date-nav">
-    <hr/><br/><br/>
+    <nav class="section-nav">
+        <br /><hr />
         <h3>Table of Contents</h3>
         <a href="#march20">What's In a Name?</a>
         <a href="#april24">Reminiscing</a>
@@ -380,7 +410,7 @@
         <a href="#may10">Marvelous Marshall</a>
         <a href="#may13">Another Sort of Insomnia</a>
         <a href="#may15">Of the Round Table</a>
-        <a href="#may16">Commoner Life</a>
+        <a href="#may16">Life of a Commoner</a>
     </nav>
 
     <div class="content-wrapper">
@@ -389,27 +419,27 @@
                 <svg viewBox="0 0 400 50" xmlns="http://www.w3.org/2000/svg">
                     <!-- Central diamond star -->
                     <path d="M200 10 L210 25 L200 40 L190 25 Z"
-                          fill="#c4ae8f" stroke="#d8c5a7" stroke-width="1.5"/>
+                          fill="#c4ae8f" stroke="#d8c5a7" stroke-width="1.5" />
                     <path d="M200 15 L205 25 L200 35 L195 25 Z"
-                          fill="#d8c5a7" opacity="0.8"/>
+                          fill="#d8c5a7" opacity="0.8" />
 
                     <!-- Left small star -->
                     <path d="M160 25 L155 22 L155 28 L150 25 L155 22 L158 21 L159 26 L163 23 L160 27 L157 27 Z"
-                          fill="#c4ae8f" stroke="#d8c5a7" stroke-width="1"/>
+                          fill="#c4ae8f" stroke="#d8c5a7" stroke-width="1" />
 
                     <!-- Right small star -->
                     <path d="M240 25 L245 22 L245 28 L250 25 L245 22 L242 21 L241 26 L237 23 L240 27 L243 27 Z"
-                          fill="#c4ae8f" stroke="#d8c5a7" stroke-width="1"/>
+                          fill="#c4ae8f" stroke="#d8c5a7" stroke-width="1" />
 
                     <!-- Connecting lines -->
-                    <path d="M50 25 L140 25" stroke="#b88c5a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                    <path d="M260 25 L350 25" stroke="#b88c5a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                    <path d="M163 25 L187 25" stroke="#b88c5a" stroke-width="1.5" fill="none" opacity="0.8"/>
-                    <path d="M213 25 L237 25" stroke="#b88c5a" stroke-width="1.5" fill="none" opacity="0.8"/>
+                    <path d="M50 25 L140 25" stroke="#b88c5a" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                    <path d="M260 25 L350 25" stroke="#b88c5a" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                    <path d="M163 25 L187 25" stroke="#b88c5a" stroke-width="1.5" fill="none" opacity="0.8" />
+                    <path d="M213 25 L237 25" stroke="#b88c5a" stroke-width="1.5" fill="none" opacity="0.8" />
                 </svg>
             </div>
             <h1>FFXV King's Knight Messages</h1>
-            <p>Translation by <strong>Umbrella of Glass</strong> | Localization by <strong>SI_Vaer "Silver"</strong></p>
+            <p>Translation by <strong>Umbrella of Glass</strong> | Relocalization by <strong>SI_Vaer "Silver"</strong></p>
         </header>
 
         <div class="controls">
@@ -436,1104 +466,1109 @@
         </div>
 
         <main>
-        <section id="march20" class="conversation">
-            <div class="date-header">March 20th, M.E. 756</div>
-            <h2 class="conversation-title">What's In a Name?</h2>
+            <h2>- Messageboard -</h2>
+            <br />
+            <section id="march20" class="conversation">
+                <div class="date-header">March 20th, M.E. 756</div>
+                <h2 class="conversation-title">What's In a Name?</h2>
 
-            <div class="message-table-container active">
-                <table class="message-table">
-                    <thead>
-                        <tr>
-                            <th width="90px">Speaker</th>
-                            <th class="original-jp">Original Japanese</th>
-                            <th class="jp-translation">JP Translation</th>
-                            <th class="original-en">Original English</th>
-                            <th class="localization">Revised Localization</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="message-row">
-    <td class="avatar-cell">
-        <div class="avatar avatar-gladio">
-            <img src="images/gladio.png" alt="G" />
-        </div>
-        <div class="speaker speaker-gladio">
-            Gladio
-            <span class="username">Henruit</span>
-        </div>
-    </td>
-    <td class="message-cell original-jp">ん？何だ？「†王子†」ってｗ<br>そのままじゃんかノクト</td>
-    <td class="message-cell jp-translation">What? "†Prince†" Haha. Isn't that the same [as your real name], Noct?</td>
-    <td class="message-cell original-en">lol, wut?<br>ur handle is †Prince†?<br>A little obvious, dyt?</td>
-    <td class="message-cell localization">†Prince† is a little on the nose, don’t you think?</td>
-</tr>
+                <div class="message-table-container active">
+                    <table class="message-table">
+                        <thead>
+                            <tr>
+                                <th width="90px">Speaker</th>
+                                <th class="original-jp">Original Japanese</th>
+                                <th class="jp-translation">JP Translation</th>
+                                <th class="original-en">Original English</th>
+                                <th class="localization">Revised Localization</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-gladio">
+                                        <img src="images/gladio.png" alt="G" />
+                                    </div>
+                                    <div class="speaker speaker-gladio">
+                                        Gladio
+                                        <span class="username">Henruit</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">ん？何だ？「†王子†」ってｗ<br>そのままじゃんかノクト</td>
+                                <td class="message-cell jp-translation">What? "†Prince†" Haha. Isn't that the same [as your real name], Noct?</td>
+                                <td class="message-cell original-en">lol, wut?<br>ur handle is †Prince†?<br>A little obvious, dyt?</td>
+                                <td class="message-cell localization">†Prince† is a little on the nose, don’t you think?</td>
+                            </tr>
 
-<tr class="message-row">
-    <td class="avatar-cell">
-        <div class="avatar avatar-noctis">
-           <img src="images/noctis.png" alt="N" />
-        </div>
-        <div class="speaker speaker-noctis">
-            Noctis
-            <span class="username">†Prince†</span>
-        </div>
-    </td>
-    <td class="message-cell original-jp">王子なんだから間違ってねーし！<br>名前入れて気づかれて困るし</td>
-    <td class="message-cell jp-translation">It's accurate -- I am the prince! I'd be in trouble if someone realized I put my real name.</td>
-    <td class="message-cell original-en">SYM, it’s accurate!<br>Only a moron would use his real name.</td>
-    <td class="message-cell localization">Whatever, it’s accurate! I’d be screwed if I used my real name.</td>
-</tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis">
+                                        <img src="images/noctis.png" alt="N" />
+                                    </div>
+                                    <div class="speaker speaker-noctis">
+                                        Noctis
+                                        <span class="username">†Prince†</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">王子なんだから間違ってねーし！<br>名前入れて気づかれて困るし</td>
+                                <td class="message-cell jp-translation">It's accurate -- I am the prince! I'd be in trouble if someone realized I put my real name.</td>
+                                <td class="message-cell original-en">SYM, it’s accurate!<br>Only a moron would use his real name.</td>
+                                <td class="message-cell localization">Whatever, it’s accurate! I’d be screwed if I used my real name.</td>
+                            </tr>
 
-<tr class="message-row">
-    <td class="avatar-cell">
-        <div class="avatar avatar-prompto">
-            <img src="images/prompto.png" alt="P" />
-        </div>
-        <div class="speaker speaker-prompto">
-            Prompto
-            <span class="username">LOKTON</span>
-        </div>
-    </td>
-    <td class="message-cell original-jp">「†王子†」ｗ 厨二感ｗｗｗ<br>っていうかエンルィートって誰よｗｗｗｗ<br>なにこの地的そうな名前ｗｗｗ</td>
-    <td class="message-cell jp-translation">"†Prince†" lol. It makes you sound like you're in middle school lololol<br>By the way, who's Henruit? What's with that intellectual-sounding name? lolol</td>
-    <td class="message-cell original-en">†Prince† LOL wut r u 12?<br>And who's Henruit LOLOL?<br>Some guy who did something we don't care about?</td>
-    <td class="message-cell localization">LOL "†Prince†" makes you sound like ur in middle school 🤣<br><br>Ok who's Henruit btw? Sounds rly nerdy</td>
-</tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto">
+                                        <img src="images/prompto.png" alt="P" />
+                                    </div>
+                                    <div class="speaker speaker-prompto">
+                                        Prompto
+                                        <span class="username">LOKTON</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">「†王子†」ｗ 厨二感ｗｗｗ<br>っていうかエンルィートって誰よｗｗｗｗ<br>なにこの地的そうな名前ｗｗｗ</td>
+                                <td class="message-cell jp-translation">"†Prince†" lol. It makes you sound like you're in middle school lololol<br>By the way, who's Henruit? What's with that intellectual-sounding name? lolol</td>
+                                <td class="message-cell original-en">†Prince† LOL wut r u 12?<br>And who's Henruit LOLOL?<br>Some guy who did something we don't care about?</td>
+                                <td class="message-cell localization">LOL "†Prince†" makes you sound like ur in middle school 🤣<br><br>Ok who's Henruit btw? Sounds rly nerdy</td>
+                            </tr>
 
-<tr class="message-row">
-    <td class="avatar-cell">
-        <div class="avatar avatar-gladio">
-            <img src="images/gladio.png" alt="G" />
-        </div>
-        <div class="speaker speaker-gladio">
-            Gladio
-            <span class="username">Henruit</span>
-        </div>
-    </td>
-    <td class="message-cell original-jp">おまえこそLOKTONてなんだよｗ<br>オレの愛読書 の「知識の沈黙」の作者<br>エンルィートからだ</td>
-    <td class="message-cell jp-translation">What about yours? What's LOKTON? Lol<br><br>Henruit comes from the author of my favorite book, "Silence of Knowledge"</td>
-    <td class="message-cell original-en">Better than LOKTON lol<br>fyi Henruit is the author of my fav book<br>"Silence of Knowledge"</td>
-    <td class="message-cell localization">Sounds better than LOKTON lol<br><br>Henruit is the author of my favorite book, "Silence of Knowledge"</td>
-</tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-gladio">
+                                        <img src="images/gladio.png" alt="G" />
+                                    </div>
+                                    <div class="speaker speaker-gladio">
+                                        Gladio
+                                        <span class="username">Henruit</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">おまえこそLOKTONてなんだよｗ<br>オレの愛読書 の「知識の沈黙」の作者<br>エンルィートからだ</td>
+                                <td class="message-cell jp-translation">What about yours? What's LOKTON? Lol<br><br>Henruit comes from the author of my favorite book, "Silence of Knowledge"</td>
+                                <td class="message-cell original-en">Better than LOKTON lol<br>fyi Henruit is the author of my fav book<br>"Silence of Knowledge"</td>
+                                <td class="message-cell localization">Sounds better than LOKTON lol<br><br>Henruit is the author of my favorite book, "Silence of Knowledge"</td>
+                            </tr>
 
-<tr class="message-row">
-    <td class="avatar-cell">
-        <div class="avatar avatar-prompto">
-            <img src="images/prompto.png" alt="P" />
-        </div>
-        <div class="speaker speaker-prompto">
-            Prompto
-            <span class="username">LOKTON</span>
-        </div>
-    </td>
-    <td class="message-cell original-jp">へえーー<br>いつも読んでるやつ？その名前だたの。<br>オレだってマイカメラから取ったし！<br>このメーカーのカメラ使ってんの！</td>
-    <td class="message-cell jp-translation">Ohh --<br>That guy you're always reading? That's his name?<br><br>I got mine from my camera. This is the maker of the camera I use!</td>
-    <td class="message-cell original-en">Ohh<br>Book you're always reading? Well FYI, LOKTON is the camera brand I use!</td>
-    <td class="message-cell localization">Ohh that book you're always reading? Huh<br><br>Mine is from my camera. It's the brand I use 😀</td>
-</tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto">
+                                        <img src="images/prompto.png" alt="P" />
+                                    </div>
+                                    <div class="speaker speaker-prompto">
+                                        Prompto
+                                        <span class="username">LOKTON</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">へえーー<br>いつも読んでるやつ？その名前だたの。<br>オレだってマイカメラから取ったし！<br>このメーカーのカメラ使ってんの！</td>
+                                <td class="message-cell jp-translation">Ohh --<br>That guy you're always reading? That's his name?<br><br>I got mine from my camera. This is the maker of the camera I use!</td>
+                                <td class="message-cell original-en">Ohh<br>Book you're always reading? Well FYI, LOKTON is the camera brand I use!</td>
+                                <td class="message-cell localization">Ohh that book you're always reading? Huh<br><br>Mine is from my camera. It's the brand I use 😀</td>
+                            </tr>
 
-<tr class="message-row">
-    <td class="avatar-cell">
-        <div class="avatar avatar-noctis">
-           <img src="images/noctis.png" alt="N" />
-        </div>
-        <div class="speaker speaker-noctis">
-            Noctis
-            <span class="username">†Prince†</span>
-        </div>
-    </td>
-    <td class="message-cell original-jp">エンルィ...ん？グラディオ？LOKT…何て読むんだよプロンプト？つーかイグニス<br>おまえ、そのままでいいわけ？</td>
-    <td class="message-cell jp-translation">Henrui….huh? Gladio?<br>LOKT…How do you say that, Prompto?<br>Ignis! Is it okay to use your name?</td>
-    <td class="message-cell original-en">Enf..wut? Gladio?<br>LOKT? how do u even say that Prompto?<br>Ignis! You used your real name!</td>
-    <td class="message-cell localization">Henruit is Gladio?<br>And how do you even say LOKTON Prompto?<br>Wait, Ignis! You used your real name?!</td>
-</tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis">
+                                        <img src="images/noctis.png" alt="N" />
+                                    </div>
+                                    <div class="speaker speaker-noctis">
+                                        Noctis
+                                        <span class="username">†Prince†</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">エンルィ...ん？グラディオ？LOKT…何て読むんだよプロンプト？つーかイグニス<br>おまえ、そのままでいいわけ？</td>
+                                <td class="message-cell jp-translation">Henrui….huh? Gladio?<br>LOKT…How do you say that, Prompto?<br>Ignis! Is it okay to use your name?</td>
+                                <td class="message-cell original-en">Enf..wut? Gladio?<br>LOKT? how do u even say that Prompto?<br>Ignis! You used your real name!</td>
+                                <td class="message-cell localization">Henruit is Gladio?<br>And how do you even say LOKTON Prompto?<br>Wait, Ignis! You used your real name?!</td>
+                            </tr>
 
-<tr class="message-row">
-    <td class="avatar-cell">
-        <div class="avatar avatar-ignis">
-            <img src="images/ignis.png" alt="I" />
-        </div>
-        <div class="speaker speaker-ignis">
-            Ignis
-            <span class="username">Ignis</span>
-        </div>
-    </td>
-    <td class="message-cell original-jp">ああ。何か問題があるか？<br>おまえのようにバレても困らないしな</td>
-    <td class="message-cell jp-translation">Yeah. Is there a problem with it?<br>I’m not troubled about being discovered like you are.</td>
-    <td class="message-cell original-en">Yes, am I a moron now? Unlike you, my Prince, I don’t care much if people find out who I am.</td>
-    <td class="message-cell localization">Yes. Does that make me screwed? I’m not concerned about being discovered, unlike you, my Prince.</td>
-</tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-ignis">
+                                        <img src="images/ignis.png" alt="I" />
+                                    </div>
+                                    <div class="speaker speaker-ignis">
+                                        Ignis
+                                        <span class="username">Ignis</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">ああ。何か問題があるか？<br>おまえのようにバレても困らないしな</td>
+                                <td class="message-cell jp-translation">Yeah. Is there a problem with it?<br>I’m not troubled about being discovered like you are.</td>
+                                <td class="message-cell original-en">Yes, am I a moron now? Unlike you, my Prince, I don’t care much if people find out who I am.</td>
+                                <td class="message-cell localization">Yes. Does that make me screwed? I’m not concerned about being discovered, unlike you, my Prince.</td>
+                            </tr>
 
-<tr class="message-row">
-    <td class="avatar-cell">
-        <div class="avatar avatar-noctis">
-           <img src="images/noctis.png" alt="N" />
-        </div>
-        <div class="speaker speaker-noctis">
-            Noctis
-            <span class="username">†Prince†</span>
-        </div>
-    </td>
-    <td class="message-cell original-jp">相変わらず歪みねぇな</td>
-    <td class="message-cell jp-translation">Direct as ever, huh?</td>
-    <td class="message-cell original-en">Wow, tell me how u rly feel</td>
-    <td class="message-cell localization">A little rude, don’t you think?</td>
-</tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-        <section id="april24" class="conversation">
-    <div class="date-header">April 24th, M.E. 756</div>
-    <h2 class="conversation-title">Reminiscing</h2>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis">
+                                        <img src="images/noctis.png" alt="N" />
+                                    </div>
+                                    <div class="speaker speaker-noctis">
+                                        Noctis
+                                        <span class="username">†Prince†</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">相変わらず歪みねぇな</td>
+                                <td class="message-cell jp-translation">Direct as ever, huh?</td>
+                                <td class="message-cell original-en">Wow, tell me how u rly feel</td>
+                                <td class="message-cell localization">A little rude, don’t you think?</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="april24" class="conversation">
+                <div class="date-header">April 24th, M.E. 756</div>
+                <h2 class="conversation-title">Reminiscing</h2>
 
-    <div class="message-table-container active">
-        <table class="message-table">
-            <thead>
-                <tr>
-                    <th width="90px">Speaker</th>
-                    <th class="original-jp">Original Japanese</th>
-                    <th class="jp-translation">JP Translation</th>
-                    <th class="original-en">Original English</th>
-                    <th class="localization">Revised Localization</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto">
-                            <img src="images/prompto.png" alt="P" />
-                        </div>
-                        <div class="speaker speaker-prompto">
-                            Prompto
-                            <span class="username">LOKTON</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">みんあ覚えてる？<br>キングスナイトって配信まで1年延期されたんだよね</td>
-                    <td class="message-cell jp-translation">Does everyone remember?<br>The King’s Knight launch was delayed for a year.</td>
-                    <td class="message-cell original-en">U all remember?<br>The KING’S KNIGHT launch was delayed for a whole year</td>
-                    <td class="message-cell localization">U guys remember when the launch was delayed a whole year</td>
-                </tr>
+                <div class="message-table-container active">
+                    <table class="message-table">
+                        <thead>
+                            <tr>
+                                <th width="90px">Speaker</th>
+                                <th class="original-jp">Original Japanese</th>
+                                <th class="jp-translation">JP Translation</th>
+                                <th class="original-en">Original English</th>
+                                <th class="localization">Revised Localization</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto">
+                                        <img src="images/prompto.png" alt="P" />
+                                    </div>
+                                    <div class="speaker speaker-prompto">
+                                        Prompto
+                                        <span class="username">LOKTON</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">みんあ覚えてる？<br>キングスナイトって配信まで1年延期されたんだよね</td>
+                                <td class="message-cell jp-translation">Does everyone remember?<br>The King’s Knight launch was delayed for a year.</td>
+                                <td class="message-cell original-en">U all remember?<br>The KING’S KNIGHT launch was delayed for a whole year</td>
+                                <td class="message-cell localization">U guys remember when the launch was delayed a whole year</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-noctis">
-                           <img src="images/noctis.png" alt="N" />
-                        </div>
-                        <div class="speaker speaker-noctis">
-                            Noctis
-                            <span class="username">†Prince†</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">そうだったっけ<br>正直携帯ゲーとか興味なかったわ<br>とかは行ってたけど</td>
-                    <td class="message-cell jp-translation">Was it? Honestly, I wasn’t interested in mobile games then.<br>I was going to places like arcades.</td>
-                    <td class="message-cell original-en">Was it? Honestly, I had no interest in mobile games back then.<br>I was still going to arcades.</td>
-                    <td class="message-cell localization">Was it? Honestly I had no interest in mobile games back then, was still going to arcades</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis">
+                                        <img src="images/noctis.png" alt="N" />
+                                    </div>
+                                    <div class="speaker speaker-noctis">
+                                        Noctis
+                                        <span class="username">†Prince†</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">そうだったっけ<br>正直携帯ゲーとか興味なかったわ<br>とかは行ってたけど</td>
+                                <td class="message-cell jp-translation">Was it? Honestly, I wasn’t interested in mobile games then.<br>I was going to places like arcades.</td>
+                                <td class="message-cell original-en">Was it? Honestly, I had no interest in mobile games back then.<br>I was still going to arcades.</td>
+                                <td class="message-cell localization">Was it? Honestly I had no interest in mobile games back then, was still going to arcades</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-gladio">
-                            <img src="images/gladio.png" alt="G" />
-                        </div>
-                        <div class="speaker speaker-gladio">
-                            Gladio
-                            <span class="username">Henruit</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">おまえら見つけにいくのに<br>インソムニア中のゲーセンを把握しちまったこちの身にもなれ</td>
-                    <td class="message-cell jp-translation">I was always going to look for you, though.<br>I got to know all of the game centers in Insomnia.</td>
-                    <td class="message-cell original-en">Yes, I recall vividly<br>I knew the ins and outs of every arcade in Insomnia bcz I always went looking 4 all of u there</td>
-                    <td class="message-cell localization">I remember going to every arcade in Insomnia to look for you</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-gladio">
+                                        <img src="images/gladio.png" alt="G" />
+                                    </div>
+                                    <div class="speaker speaker-gladio">
+                                        Gladio
+                                        <span class="username">Henruit</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">おまえら見つけにいくのに<br>インソムニア中のゲーセンを把握しちまったこちの身にもなれ</td>
+                                <td class="message-cell jp-translation">I was always going to look for you, though.<br>I got to know all of the game centers in Insomnia.</td>
+                                <td class="message-cell original-en">Yes, I recall vividly<br>I knew the ins and outs of every arcade in Insomnia bcz I always went looking 4 all of u there</td>
+                                <td class="message-cell localization">I remember going to every arcade in Insomnia to look for you</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-noctis">
-                           <img src="images/noctis.png" alt="N" />
-                        </div>
-                        <div class="speaker speaker-noctis">
-                            Noctis
-                            <span class="username">†Prince†</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">つーか<br>なんで毎回場所変えたのにすぐみつかるんだ？</td>
-                    <td class="message-cell jp-translation">I mean<br>How did you always find us even though we changed locations each time?</td>
-                    <td class="message-cell original-en">Yeah, how is it you always found us?<br>We changed locations every day!</td>
-                    <td class="message-cell localization">Yeah, how did you always find us?<br>We changed locations every day!</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis">
+                                        <img src="images/noctis.png" alt="N" />
+                                    </div>
+                                    <div class="speaker speaker-noctis">
+                                        Noctis
+                                        <span class="username">†Prince†</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">つーか<br>なんで毎回場所変えたのにすぐみつかるんだ？</td>
+                                <td class="message-cell jp-translation">I mean<br>How did you always find us even though we changed locations each time?</td>
+                                <td class="message-cell original-en">Yeah, how is it you always found us?<br>We changed locations every day!</td>
+                                <td class="message-cell localization">Yeah, how did you always find us?<br>We changed locations every day!</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-ignis">
-                            <img src="images/ignis.png" alt="I" />
-                        </div>
-                        <div class="speaker speaker-ignis">
-                            Ignis
-                            <span class="username">Ignis</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">王都警護隊のネトワークをなめてもらっては困る</td>
-                    <td class="message-cell jp-translation">You’ll be in trouble if you underestimate the Crownsguard’s network.</td>
-                    <td class="message-cell original-en">Don’t underestimate the Crownsguard’s vast network, ur Highness</td>
-                    <td class="message-cell localization">Underestimating the Crownsguard’s network will screw you</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-ignis">
+                                        <img src="images/ignis.png" alt="I" />
+                                    </div>
+                                    <div class="speaker speaker-ignis">
+                                        Ignis
+                                        <span class="username">Ignis</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">王都警護隊のネトワークをなめてもらっては困る</td>
+                                <td class="message-cell jp-translation">You’ll be in trouble if you underestimate the Crownsguard’s network.</td>
+                                <td class="message-cell original-en">Don’t underestimate the Crownsguard’s vast network, ur Highness</td>
+                                <td class="message-cell localization">Underestimating the Crownsguard’s network will screw you</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto">
-                            <img src="images/prompto.png" alt="P" />
-                        </div>
-                        <div class="speaker speaker-prompto">
-                            Prompto
-                            <span class="username">LOKTON</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">え。王都警護隊のひとに見られたの！？<br>さすが王様...<br>いまさらノクトをつるんでたオレすげえって思った</td>
-                    <td class="message-cell jp-translation">Wow. You were being watched by Crownsguards!?<br>Well, you’re royalty…<br>Again, I thought it was amazing that you hung out with me.</td>
-                    <td class="message-cell original-en">U were being watched by the Crownsguard???<br>Well, I guess u r royalty after all…<br>How awesome am I that I’m friends with u? LOL</td>
-                    <td class="message-cell localization">Uh, wow. Watched by the Crownsguard??<br>Well I guess u are royalty…<br>Sooo awesome that I’m friends w/ u</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto">
+                                        <img src="images/prompto.png" alt="P" />
+                                    </div>
+                                    <div class="speaker speaker-prompto">
+                                        Prompto
+                                        <span class="username">LOKTON</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">え。王都警護隊のひとに見られたの！？<br>さすが王様...<br>いまさらノクトをつるんでたオレすげえって思った</td>
+                                <td class="message-cell jp-translation">Wow. You were being watched by Crownsguards!?<br>Well, you’re royalty…<br>Again, I thought it was amazing that you hung out with me.</td>
+                                <td class="message-cell original-en">U were being watched by the Crownsguard???<br>Well, I guess u r royalty after all…<br>How awesome am I that I’m friends with u? LOL</td>
+                                <td class="message-cell localization">Uh, wow. Watched by the Crownsguard??<br>Well I guess u are royalty…<br>Sooo awesome that I’m friends w/ u</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-gladio">
-                            <img src="images/gladio.png" alt="G" />
-                        </div>
-                        <div class="speaker speaker-gladio">
-                            Gladio
-                            <span class="username">Henruit</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">こちも仕事だからな<br>一応、ゲームばっかやっててもルシスの王子だもんな</td>
-                    <td class="message-cell jp-translation">That’s also my job, after all.<br>Even if he pretty much only plays games, he’s the prince of Lucis.</td>
-                    <td class="message-cell original-en">It was my job, after all<br>he may be a degenerate gamer, but he is still the heir to the throne</td>
-                    <td class="message-cell localization">All part of my job to keep him outta trouble<br>he may be a degenerate gamer, but he’s still the heir to the throne</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-gladio">
+                                        <img src="images/gladio.png" alt="G" />
+                                    </div>
+                                    <div class="speaker speaker-gladio">
+                                        Gladio
+                                        <span class="username">Henruit</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">こちも仕事だからな<br>一応、ゲームばっかやっててもルシスの王子だもんな</td>
+                                <td class="message-cell jp-translation">That’s also my job, after all.<br>Even if he pretty much only plays games, he’s the prince of Lucis.</td>
+                                <td class="message-cell original-en">It was my job, after all<br>he may be a degenerate gamer, but he is still the heir to the throne</td>
+                                <td class="message-cell localization">All part of my job to keep him outta trouble<br>he may be a degenerate gamer, but he’s still the heir to the throne</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-noctis">
-                           <img src="images/noctis.png" alt="N" />
-                        </div>
-                        <div class="speaker speaker-noctis">
-                            Noctis
-                            <span class="username">†Prince†</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">ひとこと余計だっつの！</td>
-                    <td class="message-cell jp-translation">That’s an unnecessary comment!</td>
-                    <td class="message-cell original-en">Tell me how u rly feel, y dont u?</td>
-                    <td class="message-cell localization">A little rude, don’t you think?</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-<section id="may4" class="conversation">
-    <div class="date-header">May 4th, M.E. 756</div>
-    <h2 class="conversation-title">How to Make...Friends?</h2>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis">
+                                        <img src="images/noctis.png" alt="N" />
+                                    </div>
+                                    <div class="speaker speaker-noctis">
+                                        Noctis
+                                        <span class="username">†Prince†</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">ひとこと余計だっつの！</td>
+                                <td class="message-cell jp-translation">That’s an unnecessary comment!</td>
+                                <td class="message-cell original-en">Tell me how u rly feel, y dont u?</td>
+                                <td class="message-cell localization">A little rude, don’t you think?</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="may4" class="conversation">
+                <div class="date-header">May 4th, M.E. 756</div>
+                <h2 class="conversation-title">How to Make...Friends?</h2>
 
-    <div class="message-table-container active">
-        <table class="message-table">
-            <thead>
-                <tr>
-                    <th width="90px">Speaker</th>
-                    <th class="original-jp">Original Japanese</th>
-                    <th class="jp-translation">JP Translation</th>
-                    <th class="original-en">Original English</th>
-                    <th class="localization">Revised Localization</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto">
-                            <img src="images/prompto.png" alt="P" />
-                        </div>
-                        <div class="speaker speaker-prompto">
-                            Prompto
-                            <span class="username">LOKTON</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">プキッ</td>
-                    <td class="message-cell jp-translation">[Sticker] GAH</td>
-                    <td class="message-cell original-en">[Sticker] Blast!</td>
-                    <td class="message-cell localization">[Sticker] GAH</td>
-                </tr>
+                <div class="message-table-container active">
+                    <table class="message-table">
+                        <thead>
+                            <tr>
+                                <th width="90px">Speaker</th>
+                                <th class="original-jp">Original Japanese</th>
+                                <th class="jp-translation">JP Translation</th>
+                                <th class="original-en">Original English</th>
+                                <th class="localization">Revised Localization</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto">
+                                        <img src="images/prompto.png" alt="P" />
+                                    </div>
+                                    <div class="speaker speaker-prompto">
+                                        Prompto
+                                        <span class="username">LOKTON</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">プキッ</td>
+                                <td class="message-cell jp-translation">[Sticker] GAH</td>
+                                <td class="message-cell original-en">[Sticker] Blast!</td>
+                                <td class="message-cell localization">[Sticker] GAH</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-noctis">
-                           <img src="images/noctis.png" alt="N" />
-                        </div>
-                        <div class="speaker speaker-noctis">
-                            Noctis
-                            <span class="username">†Prince†</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">どうしたー？</td>
-                    <td class="message-cell jp-translation">What’s wrong?</td>
-                    <td class="message-cell original-en">What happened?</td>
-                    <td class="message-cell localization">What’s up?</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis">
+                                        <img src="images/noctis.png" alt="N" />
+                                    </div>
+                                    <div class="speaker speaker-noctis">
+                                        Noctis
+                                        <span class="username">†Prince†</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">どうしたー？</td>
+                                <td class="message-cell jp-translation">What’s wrong?</td>
+                                <td class="message-cell original-en">What happened?</td>
+                                <td class="message-cell localization">What’s up?</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto">
-                            <img src="images/prompto.png" alt="P" />
-                        </div>
-                        <div class="speaker speaker-prompto">
-                            Prompto
-                            <span class="username">LOKTON</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">さっきキングスナイトをやってるっていう可愛い子にじゃあフレンドになりませんか？って言ったら...(T^T)</td>
-                    <td class="message-cell jp-translation">There was a cute girl just now who said she played King’s Knight, and I said “So, can we become friends?"...T-T</td>
-                    <td class="message-cell original-en">There was a cute girl who said she played KN, so I asked if I could friend her, but…QQ</td>
-                    <td class="message-cell localization">I met a cute girl who said she played King’s Knight, so I asked if I could send her a friend req, but…>.></td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto">
+                                        <img src="images/prompto.png" alt="P" />
+                                    </div>
+                                    <div class="speaker speaker-prompto">
+                                        Prompto
+                                        <span class="username">LOKTON</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">さっきキングスナイトをやってるっていう可愛い子にじゃあフレンドになりませんか？って言ったら...(T^T)</td>
+                                <td class="message-cell jp-translation">There was a cute girl just now who said she played King’s Knight, and I said “So, can we become friends?"...T-T</td>
+                                <td class="message-cell original-en">There was a cute girl who said she played KN, so I asked if I could friend her, but…QQ</td>
+                                <td class="message-cell localization">I met a cute girl who said she played King’s Knight, so I asked if I could send her a friend req, but…>.></td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-gladio">
-                            <img src="images/gladio.png" alt="G" />
-                        </div>
-                        <div class="speaker speaker-gladio">
-                            Gladio
-                            <span class="username">Henruit</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">いきなりすぎんだろう。そういう時はな、<br>まずマルチで困難なマップを一緒にし達成感を共有してから<br>声を掛ける法がうまくいくもんだぜ</td>
-                    <td class="message-cell jp-translation">You move too quickly. In a situation like that, you should clear a hard map together in co-op first, because it’ll build a joint sense of accomplishment. That’s the skillful way to start talking to someone.</td>
-                    <td class="message-cell original-en">You come on too strong!<br>You should first clear a hard map together or somesuch to build rapport, *then* ask to become friends!</td>
-                    <td class="message-cell localization">Moving too quick, Prompto. Should clear a map in co-op together first to build rapport, THEN ask to friend her</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-gladio">
+                                        <img src="images/gladio.png" alt="G" />
+                                    </div>
+                                    <div class="speaker speaker-gladio">
+                                        Gladio
+                                        <span class="username">Henruit</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">いきなりすぎんだろう。そういう時はな、<br>まずマルチで困難なマップを一緒にし達成感を共有してから<br>声を掛ける法がうまくいくもんだぜ</td>
+                                <td class="message-cell jp-translation">You move too quickly. In a situation like that, you should clear a hard map together in co-op first, because it’ll build a joint sense of accomplishment. That’s the skillful way to start talking to someone.</td>
+                                <td class="message-cell original-en">You come on too strong!<br>You should first clear a hard map together or somesuch to build rapport, *then* ask to become friends!</td>
+                                <td class="message-cell localization">Moving too quick, Prompto. Should clear a map in co-op together first to build rapport, THEN ask to friend her</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto">
-                            <img src="images/prompto.png" alt="P" />
-                        </div>
-                        <div class="speaker speaker-prompto">
-                            Prompto
-                            <span class="username">LOKTON</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">あーーグラディオがスマート過ぎ無理...<br>イグニスだって聞くでしょ？</td>
-                    <td class="message-cell jp-translation">You’re too smart, Gladio. I can’t do it. Ignis, you would have asked her, right?</td>
-                    <td class="message-cell original-en">Way 2 conservative, Gladio!<br>You would’ve asked her 2, right Ignis?</td>
-                    <td class="message-cell localization">You’re too smooth, Gladio. I couldn’t do it.<br>You would’ve asked her too, right Ignis?</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto">
+                                        <img src="images/prompto.png" alt="P" />
+                                    </div>
+                                    <div class="speaker speaker-prompto">
+                                        Prompto
+                                        <span class="username">LOKTON</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">あーーグラディオがスマート過ぎ無理...<br>イグニスだって聞くでしょ？</td>
+                                <td class="message-cell jp-translation">You’re too smart, Gladio. I can’t do it. Ignis, you would have asked her, right?</td>
+                                <td class="message-cell original-en">Way 2 conservative, Gladio!<br>You would’ve asked her 2, right Ignis?</td>
+                                <td class="message-cell localization">You’re too smooth, Gladio. I couldn’t do it.<br>You would’ve asked her too, right Ignis?</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-ignis">
-                            <img src="images/ignis.png" alt="I" />
-                        </div>
-                        <div class="speaker speaker-ignis">
-                            Ignis
-                            <span class="username">Ignis</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">困っていたら助けるが、<br>いきなり女性にフレンドにならないかと聞くのは...</td>
-                    <td class="message-cell jp-translation">Helping her if she’s in trouble is one thing, but abruptly asking to become friends is…</td>
-                    <td class="message-cell original-en">I would have aided her if she was in distress, but I would not have asked if I could befriend her out of the blue</td>
-                    <td class="message-cell localization">Helping if she is screwed is one thing, but immediately asking to become friends is…</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-ignis">
+                                        <img src="images/ignis.png" alt="I" />
+                                    </div>
+                                    <div class="speaker speaker-ignis">
+                                        Ignis
+                                        <span class="username">Ignis</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">困っていたら助けるが、<br>いきなり女性にフレンドにならないかと聞くのは...</td>
+                                <td class="message-cell jp-translation">Helping her if she’s in trouble is one thing, but abruptly asking to become friends is…</td>
+                                <td class="message-cell original-en">I would have aided her if she was in distress, but I would not have asked if I could befriend her out of the blue</td>
+                                <td class="message-cell localization">Helping if she is screwed is one thing, but immediately asking to become friends is…</td>
+                            </tr>
 
-                <tr class="message-row">
-                <td class="avatar-cell">
-                    <div class="avatar avatar-noctis">
-                        <img src="images/noctis.png" alt="N" />
-                    </div>
-                    <div class="speaker speaker-noctis">
-                        Noctis
-                        <span class="username">†Prince†</span>
-                    </div>
-                    </td>
-                    <td class="message-cell original-jp">困ってたらって、ゲームでかよｗｗ<br>ルナなら一緒にやりましょうって言ってくるだろうけどな</td>
-                    <td class="message-cell jp-translation">Being in trouble? In a game? lol<br>If it were Luna, I bet she would ask me if we could play together.</td>
-                    <td class="message-cell original-en">“In distress”??? lol<br>U know this is a game rite?<br>I’m sure Luna would befriend me without question.</td>
-                    <td class="message-cell localization">Screwed in a game? lol xD<br><br>I bet Luna would friend me no questions asked</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis">
+                                        <img src="images/noctis.png" alt="N" />
+                                    </div>
+                                    <div class="speaker speaker-noctis">
+                                        Noctis
+                                        <span class="username">†Prince†</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">困ってたらって、ゲームでかよｗｗ<br>ルナなら一緒にやりましょうって言ってくるだろうけどな</td>
+                                <td class="message-cell jp-translation">Being in trouble? In a game? lol<br>If it were Luna, I bet she would ask me if we could play together.</td>
+                                <td class="message-cell original-en">“In distress”??? lol<br>U know this is a game rite?<br>I’m sure Luna would befriend me without question.</td>
+                                <td class="message-cell localization">Screwed in a game? lol xD<br><br>I bet Luna would friend me no questions asked</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto">
-                            <img src="images/prompto.png" alt="P" />
-                        </div>
-                        <div class="speaker speaker-prompto">
-                            Prompto
-                            <span class="username">LOKTON</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">うわ...<br>出たよ、皆さん、王子がノロケてますよーー様が女神なのはわかりますけど！</td>
-                    <td class="message-cell jp-translation">Uwaah…<br>Here we go, everyone. The prince is BRAGGING.<br>Lady Lunafreya’s a goddess – we know!</td>
-                    <td class="message-cell original-en">And heeere we go…<br>Time for the Prince’s daily worship of his goddess, Lady Lunafreya!</td>
-                    <td class="message-cell localization">Here we go again, another day of †Prince† BRAGGING that he’s besties with Lady Lunafreya 🙄</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-<section id="may10" class="conversation">
-    <div class="date-header">May 10th, M.E. 756</div>
-    <h2 class="conversation-title">Marvelous Marshall</h2>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto">
+                                        <img src="images/prompto.png" alt="P" />
+                                    </div>
+                                    <div class="speaker speaker-prompto">
+                                        Prompto
+                                        <span class="username">LOKTON</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">うわ...<br>出たよ、皆さん、王子がノロケてますよーー様が女神なのはわかりますけど！</td>
+                                <td class="message-cell jp-translation">Uwaah…<br>Here we go, everyone. The prince is BRAGGING.<br>Lady Lunafreya’s a goddess – we know!</td>
+                                <td class="message-cell original-en">And heeere we go…<br>Time for the Prince’s daily worship of his goddess, Lady Lunafreya!</td>
+                                <td class="message-cell localization">Here we go again, another day of †Prince† BRAGGING that he’s besties with Lady Lunafreya 🙄</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="may10" class="conversation">
+                <div class="date-header">May 10th, M.E. 756</div>
+                <h2 class="conversation-title">Marvelous Marshall</h2>
 
-    <div class="message-table-container active">
-        <table class="message-table">
-            <thead>
-                <tr>
-                    <th width="90px">Speaker</th>
-                    <th class="original-jp">Original Japanese</th>
-                    <th class="jp-translation">JP Translation</th>
-                    <th class="original-en">Original English</th>
-                    <th class="localization">Revised Localization</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-noctis">
-                           <img src="images/noctis.png" alt="N" />
-                        </div>
-                        <div class="speaker speaker-noctis">
-                            Noctis
-                            <span class="username">†Prince†</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">ロギンしたかー？<br>キングスナイトやんぞ</td>
-                    <td class="message-cell jp-translation">Is everyone logged on? Let’s take care of business in King’s Knight.</td>
-                    <td class="message-cell original-en">u all logged in?<br>rdy for some KING’s KNIGHT?</td>
-                    <td class="message-cell localization">Alright, everybody ready?<br>Let’s hit it.</td>
-                </tr>
+                <div class="message-table-container active">
+                    <table class="message-table">
+                        <thead>
+                            <tr>
+                                <th width="90px">Speaker</th>
+                                <th class="original-jp">Original Japanese</th>
+                                <th class="jp-translation">JP Translation</th>
+                                <th class="original-en">Original English</th>
+                                <th class="localization">Revised Localization</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis">
+                                        <img src="images/noctis.png" alt="N" />
+                                    </div>
+                                    <div class="speaker speaker-noctis">
+                                        Noctis
+                                        <span class="username">†Prince†</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">ロギンしたかー？<br>キングスナイトやんぞ</td>
+                                <td class="message-cell jp-translation">Is everyone logged on? Let’s take care of business in King’s Knight.</td>
+                                <td class="message-cell original-en">u all logged in?<br>rdy for some KING’s KNIGHT?</td>
+                                <td class="message-cell localization">Alright, everybody ready?<br>Let’s hit it.</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto">
-                            <img src="images/prompto.png" alt="P" />
-                        </div>
-                        <div class="speaker speaker-prompto">
-                            Prompto
-                            <span class="username">LOKTON</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">へーい<br>あ、そういや<br>将軍にキングスナイト知ってます？ってきたら知っててビックリしたんですけど！</td>
-                    <td class="message-cell jp-translation">Yep<br>Oh, that reminds me<br>I asked the Marshal if he knew about King’s Knight and I was surprised that he did!</td>
-                    <td class="message-cell original-en">U bet!<br>btw, I asked the marshal if he knew KING’S KNIGHT -- and he did!</td>
-                    <td class="message-cell localization">Yep!<br>Oh guess what? I asked the marshall if he knew what King’s Knight is — and he said yes!</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto">
+                                        <img src="images/prompto.png" alt="P" />
+                                    </div>
+                                    <div class="speaker speaker-prompto">
+                                        Prompto
+                                        <span class="username">LOKTON</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">へーい<br>あ、そういや<br>将軍にキングスナイト知ってます？ってきたら知っててビックリしたんですけど！</td>
+                                <td class="message-cell jp-translation">Yep<br>Oh, that reminds me<br>I asked the Marshal if he knew about King’s Knight and I was surprised that he did!</td>
+                                <td class="message-cell original-en">U bet!<br>btw, I asked the marshal if he knew KING’S KNIGHT -- and he did!</td>
+                                <td class="message-cell localization">Yep!<br>Oh guess what? I asked the marshall if he knew what King’s Knight is — and he said yes!</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-noctis">
-                           <img src="images/noctis.png" alt="N" />
-                        </div>
-                        <div class="speaker speaker-noctis">
-                            Noctis
-                            <span class="username">†Prince†</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">は？将軍って、コルか？<br>またおまえが適当にやらせたｎじゃねーの？</td>
-                    <td class="message-cell jp-translation">Huh? The Marshal – you mean Cor?<br>You didn’t randomly make him play, did you?</td>
-                    <td class="message-cell original-en">marshal? U mean Cor?<br>idk, sounds like u just forced him 2 play 4 a few min.</td>
-                    <td class="message-cell localization">U mean Cor?<br>U didn’t force him to play, did you?</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis">
+                                        <img src="images/noctis.png" alt="N" />
+                                    </div>
+                                    <div class="speaker speaker-noctis">
+                                        Noctis
+                                        <span class="username">†Prince†</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">は？将軍って、コルか？<br>またおまえが適当にやらせたｎじゃねーの？</td>
+                                <td class="message-cell jp-translation">Huh? The Marshal – you mean Cor?<br>You didn’t randomly make him play, did you?</td>
+                                <td class="message-cell original-en">marshal? U mean Cor?<br>idk, sounds like u just forced him 2 play 4 a few min.</td>
+                                <td class="message-cell localization">U mean Cor?<br>U didn’t force him to play, did you?</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto">
-                            <img src="images/prompto.png" alt="P" />
-                        </div>
-                        <div class="speaker speaker-prompto">
-                            Prompto
-                            <span class="username">LOKTON</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">違うって！<br>ああ、携帯のやつか...とかなんとか言ってたかな</td>
-                    <td class="message-cell jp-translation">No!<br>He just said something like “Yeah, that mobile thing?”</td>
-                    <td class="message-cell original-en">No!<br>He just said something like “oh, that mobile thing…”</td>
-                    <td class="message-cell localization">No no!<br>He was just like “oh, that mobile thing…”</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto">
+                                        <img src="images/prompto.png" alt="P" />
+                                    </div>
+                                    <div class="speaker speaker-prompto">
+                                        Prompto
+                                        <span class="username">LOKTON</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">違うって！<br>ああ、携帯のやつか...とかなんとか言ってたかな</td>
+                                <td class="message-cell jp-translation">No!<br>He just said something like “Yeah, that mobile thing?”</td>
+                                <td class="message-cell original-en">No!<br>He just said something like “oh, that mobile thing…”</td>
+                                <td class="message-cell localization">No no!<br>He was just like “oh, that mobile thing…”</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-ignis">
-                            <img src="images/ignis.png" alt="I" />
-                        </div>
-                        <div class="speaker speaker-ignis">
-                            Ignis
-                            <span class="username">Ignis</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">さすがは将軍、キングスナイトまで御存知とは。剣術以外も勉強熱心だな。</td>
-                    <td class="message-cell jp-translation">As expected of the Marshal, he’s even familiar with King’s Knight.<br>He’s studious in areas even beyond swordsmanship.</td>
-                    <td class="message-cell original-en">The breadth of the marshal’s knowledge never ceases to amaze me.</td>
-                    <td class="message-cell localization">A studious man, the Marshal.<br>Never fails to impress.</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-ignis">
+                                        <img src="images/ignis.png" alt="I" />
+                                    </div>
+                                    <div class="speaker speaker-ignis">
+                                        Ignis
+                                        <span class="username">Ignis</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">さすがは将軍、キングスナイトまで御存知とは。剣術以外も勉強熱心だな。</td>
+                                <td class="message-cell jp-translation">As expected of the Marshal, he’s even familiar with King’s Knight.<br>He’s studious in areas even beyond swordsmanship.</td>
+                                <td class="message-cell original-en">The breadth of the marshal’s knowledge never ceases to amaze me.</td>
+                                <td class="message-cell localization">A studious man, the Marshal.<br>Never fails to impress.</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-gladio">
-                            <img src="images/gladio.png" alt="G" />
-                        </div>
-                        <div class="speaker speaker-gladio">
-                            Gladio
-                            <span class="username">Henruit</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">想像 がつかねえなw<br>今度誘ってやってみようぜ<br>将軍ゲームでも強かったらやべえなw</td>
-                    <td class="message-cell jp-translation">I can’t imagine him playing.<br>Let’s invite him to play next time.<br>It’ll be too cool if he’s good at the game, too. lol</td>
-                    <td class="message-cell original-en">I can’t even imagine him playing…<br>Hey, let’s invite him 2 play next time!<br>Can you imagine if he’s LEET in the game too? LOL</td>
-                    <td class="message-cell localization">I can’t even picture him playing.<br>Hey, let’s invite him to play next time!<br>Imagine if he’s better than Noct lol</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-gladio">
+                                        <img src="images/gladio.png" alt="G" />
+                                    </div>
+                                    <div class="speaker speaker-gladio">
+                                        Gladio
+                                        <span class="username">Henruit</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">想像 がつかねえなw<br>今度誘ってやってみようぜ<br>将軍ゲームでも強かったらやべえなw</td>
+                                <td class="message-cell jp-translation">I can’t imagine him playing.<br>Let’s invite him to play next time.<br>It’ll be too cool if he’s good at the game, too. lol</td>
+                                <td class="message-cell original-en">I can’t even imagine him playing…<br>Hey, let’s invite him 2 play next time!<br>Can you imagine if he’s LEET in the game too? LOL</td>
+                                <td class="message-cell localization">I can’t even picture him playing.<br>Hey, let’s invite him to play next time!<br>Imagine if he’s better than Noct lol</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-noctis">
-                           <img src="images/noctis.png" alt="N" />
-                        </div>
-                        <div class="speaker speaker-noctis">
-                            Noctis
-                            <span class="username">†Prince†</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">オレが一番強ぇから！<br>オレのスコアは越えさせねえし</td>
-                    <td class="message-cell jp-translation">I’m the best!<br>I won’t let anyone beat my score.</td>
-                    <td class="message-cell original-en">No one’s more LEET than me!<br>No 1 will ever beat that score of mine</td>
-                    <td class="message-cell localization">No way, keep dreaming!<br>My highscore is unbeatable.</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis">
+                                        <img src="images/noctis.png" alt="N" />
+                                    </div>
+                                    <div class="speaker speaker-noctis">
+                                        Noctis
+                                        <span class="username">†Prince†</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">オレが一番強ぇから！<br>オレのスコアは越えさせねえし</td>
+                                <td class="message-cell jp-translation">I’m the best!<br>I won’t let anyone beat my score.</td>
+                                <td class="message-cell original-en">No one’s more LEET than me!<br>No 1 will ever beat that score of mine</td>
+                                <td class="message-cell localization">No way, keep dreaming!<br>My highscore is unbeatable.</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto">
-                            <img src="images/prompto.png" alt="P" />
-                        </div>
-                        <div class="speaker speaker-prompto">
-                            Prompto
-                            <span class="username">LOKTON</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">張り合うね～w 皆最初は携帯ゲームはどうのって色々、言ったけど 結局ハマったかんね<br>オレの布教のタマモノって感じ？ オレ、制作会社から何か記念品ほしいくらい</td>
-                    <td class="message-cell jp-translation">Someone’s competitive, huh? lol<br>At first, you all ran your mouths about mobile games, but in the end, you got HOOKED.<br>My teachings are a gift, right?<br>I want the game company to send me something in appreciation.</td>
-                    <td class="message-cell original-en">Calm down LOL<br>iirc, I was the 1 that got all of u hooked</td>
-                    <td class="message-cell localization">Chill out bro LOL<br><br>You used to badmouth mobile games and now look at you guys. Ur totally HOOKED<br><br>The creators should sponsor me 😌</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-<section id="may13" class="conversation">
-    <div class="date-header">May 13th, M.E. 756</div>
-    <h2 class="conversation-title">Another Sort of Insomnia</h2>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto">
+                                        <img src="images/prompto.png" alt="P" />
+                                    </div>
+                                    <div class="speaker speaker-prompto">
+                                        Prompto
+                                        <span class="username">LOKTON</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">張り合うね～w 皆最初は携帯ゲームはどうのって色々、言ったけど 結局ハマったかんね<br>オレの布教のタマモノって感じ？ オレ、制作会社から何か記念品ほしいくらい</td>
+                                <td class="message-cell jp-translation">Someone’s competitive, huh? lol<br>At first, you all ran your mouths about mobile games, but in the end, you got HOOKED.<br>My teachings are a gift, right?<br>I want the game company to send me something in appreciation.</td>
+                                <td class="message-cell original-en">Calm down LOL<br>iirc, I was the 1 that got all of u hooked</td>
+                                <td class="message-cell localization">Chill out bro LOL<br><br>You used to badmouth mobile games and now look at you guys. Ur totally HOOKED<br><br>The creators should sponsor me 😌</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="may13" class="conversation">
+                <div class="date-header">May 13th, M.E. 756</div>
+                <h2 class="conversation-title">Another Sort of Insomnia</h2>
 
-    <div class="message-table-container active">
-        <table class="message-table">
-            <thead>
-                <tr>
-                    <th width="90px">Speaker</th>
-                    <th class="original-jp">Original Japanese</th>
-                    <th class="jp-translation">JP Translation</th>
-                    <th class="original-en">Original English</th>
-                    <th class="localization">Revised Localization</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto"><img src="images/prompto.png" alt="P" /></div>
-                        <div class="speaker speaker-prompto">Prompto<span class="username">LOKTON</span></div>
-                    </td>
-                    <td class="message-cell original-jp">おはよー！ 今日も元気にゼルの樹回収してますー？</td>
-                    <td class="message-cell jp-translation">Morning! Is everyone getting after their Zell tree harvest today?</td>
-                    <td class="message-cell original-en">Good morning! Did u all harvest the zell tree today?</td>
-                    <td class="message-cell localization">Good morning! Did everyone harvest their Zell tree today?</td>
-                </tr>
+                <div class="message-table-container active">
+                    <table class="message-table">
+                        <thead>
+                            <tr>
+                                <th width="90px">Speaker</th>
+                                <th class="original-jp">Original Japanese</th>
+                                <th class="jp-translation">JP Translation</th>
+                                <th class="original-en">Original English</th>
+                                <th class="localization">Revised Localization</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto"><img src="images/prompto.png" alt="P" /></div>
+                                    <div class="speaker speaker-prompto">Prompto<span class="username">LOKTON</span></div>
+                                </td>
+                                <td class="message-cell original-jp">おはよー！ 今日も元気にゼルの樹回収してますー？</td>
+                                <td class="message-cell jp-translation">Morning! Is everyone getting after their Zell tree harvest today?</td>
+                                <td class="message-cell original-en">Good morning! Did u all harvest the zell tree today?</td>
+                                <td class="message-cell localization">Good morning! Did everyone harvest their Zell tree today?</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-noctis"><img src="images/noctis.png" alt="N" /></div>
-                        <div class="speaker speaker-noctis">Noctis<span class="username">†Prince†</span></div>
-                    </td>
-                    <td class="message-cell original-jp">わりぃけど 昨日ずっとコレやってて 寝てねえからオレに話しかけんなよ</td>
-                    <td class="message-cell jp-translation">Sorry. I harvested all day yesterday. I didn’t sleep, so please don’t start talking to me.</td>
-                    <td class="message-cell original-en">Sry but plz stop talking I’ve been up all nite playing</td>
-                    <td class="message-cell localization">Sry but plz stop talking I’ve been up all night playing</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis"><img src="images/noctis.png" alt="N" /></div>
+                                    <div class="speaker speaker-noctis">Noctis<span class="username">†Prince†</span></div>
+                                </td>
+                                <td class="message-cell original-jp">わりぃけど 昨日ずっとコレやってて 寝てねえからオレに話しかけんなよ</td>
+                                <td class="message-cell jp-translation">Sorry. I harvested all day yesterday. I didn’t sleep, so please don’t start talking to me.</td>
+                                <td class="message-cell original-en">Sry but plz stop talking I’ve been up all nite playing</td>
+                                <td class="message-cell localization">Sry but plz stop talking I’ve been up all night playing</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto"><img src="images/prompto.png" alt="P" /></div>
-                        <div class="speaker speaker-prompto">Prompto<span class="username">LOKTON</span></div>
-                    </td>
-                    <td class="message-cell original-jp">どんだけやってんの！? っていうかオレのがやってたよね？ ノクト先に寝オチたよね？</td>
-                    <td class="message-cell jp-translation">How much have you been doing!? I mean, I was definitely the one doing it, right? You fell asleep first.</td>
-                    <td class="message-cell original-en">All nite??? But I remember playing longer? U dozed off first iirc</td>
-                    <td class="message-cell localization">All night??? I’m p sure I played longer? You dozed off first iirc</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto"><img src="images/prompto.png" alt="P" /></div>
+                                    <div class="speaker speaker-prompto">Prompto<span class="username">LOKTON</span></div>
+                                </td>
+                                <td class="message-cell original-jp">どんだけやってんの！? っていうかオレのがやってたよね？ ノクト先に寝オチたよね？</td>
+                                <td class="message-cell jp-translation">How much have you been doing!? I mean, I was definitely the one doing it, right? You fell asleep first.</td>
+                                <td class="message-cell original-en">All nite??? But I remember playing longer? U dozed off first iirc</td>
+                                <td class="message-cell localization">All night??? I’m p sure I played longer? You dozed off first iirc</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-ignis"><img src="images/ignis.png" alt="I" /></div>
-                        <div class="speaker speaker-ignis">Ignis<span class="username">Ignis</span></div>
-                    </td>
-                    <td class="message-cell original-jp">ノクトの場合はキングスナイトのやり過ぎというよりもともと寝たら起きないからな</td>
-                    <td class="message-cell jp-translation">In Noct’s case, it goes beyond playing too much King’s Knight. It’s because when he goes to sleep, he doesn’t wake up.</td>
-                    <td class="message-cell original-en">Noct’s bad sleeping habits go way beyond dozing off during KING’S KNIGHT. When he sleeps, he doesn’t get up</td>
-                    <td class="message-cell localization">Noct’s poor sleeping habits are bigger than a simple case of too much King’s Knight. When he sleeps, he cannot be woken</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-ignis"><img src="images/ignis.png" alt="I" /></div>
+                                    <div class="speaker speaker-ignis">Ignis<span class="username">Ignis</span></div>
+                                </td>
+                                <td class="message-cell original-jp">ノクトの場合はキングスナイトのやり過ぎというよりもともと寝たら起きないからな</td>
+                                <td class="message-cell jp-translation">In Noct’s case, it goes beyond playing too much King’s Knight. It’s because when he goes to sleep, he doesn’t wake up.</td>
+                                <td class="message-cell original-en">Noct’s bad sleeping habits go way beyond dozing off during KING’S KNIGHT. When he sleeps, he doesn’t get up</td>
+                                <td class="message-cell localization">Noct’s poor sleeping habits are bigger than a simple case of too much King’s Knight. When he sleeps, he cannot be woken</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-gladio"><img src="images/gladio.png" alt="G" /></div>
-                        <div class="speaker speaker-gladio">Gladio<span class="username">Henruit</span></div>
-                    </td>
-                    <td class="message-cell original-jp">昨日週末ボスチャレンジだったよな 無駄にイイスコア出すまでやるとか言ってたな</td>
-                    <td class="message-cell jp-translation">Yesterday, he was saying things like he would keep playing until he got a good score in the Weekend Boss Challenge.</td>
-                    <td class="message-cell original-en">Yes, but he was saying that he wouldn’t sleep until he got a good score in Boss Challenge</td>
-                    <td class="message-cell localization">Yesterday he was saying that he wouldn’t sleep until he got a good score in Boss Challenge</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-gladio"><img src="images/gladio.png" alt="G" /></div>
+                                    <div class="speaker speaker-gladio">Gladio<span class="username">Henruit</span></div>
+                                </td>
+                                <td class="message-cell original-jp">昨日週末ボスチャレンジだったよな 無駄にイイスコア出すまでやるとか言ってたな</td>
+                                <td class="message-cell jp-translation">Yesterday, he was saying things like he would keep playing until he got a good score in the Weekend Boss Challenge.</td>
+                                <td class="message-cell original-en">Yes, but he was saying that he wouldn’t sleep until he got a good score in Boss Challenge</td>
+                                <td class="message-cell localization">Yesterday he was saying that he wouldn’t sleep until he got a good score in Boss Challenge</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-ignis"><img src="images/ignis.png" alt="I" /></div>
-                        <div class="speaker speaker-ignis">Ignis<span class="username">Ignis</span></div>
-                    </td>
-                    <td class="message-cell original-jp">王子がこれでは先が思いやられる</td>
-                    <td class="message-cell jp-translation">If this is what the prince is like, I worry about the future.</td>
-                    <td class="message-cell original-en">This is our future leader???</td>
-                    <td class="message-cell localization">This is our future leader??</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-ignis"><img src="images/ignis.png" alt="I" /></div>
+                                    <div class="speaker speaker-ignis">Ignis<span class="username">Ignis</span></div>
+                                </td>
+                                <td class="message-cell original-jp">王子がこれでは先が思いやられる</td>
+                                <td class="message-cell jp-translation">If this is what the prince is like, I worry about the future.</td>
+                                <td class="message-cell original-en">This is our future leader???</td>
+                                <td class="message-cell localization">This is our future leader??</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-noctis"><img src="images/noctis.png" alt="N" /></div>
-                        <div class="speaker speaker-noctis">Noctis<span class="username">†Prince†</span></div>
-                    </td>
-                    <td class="message-cell original-jp">悪かったな！</td>
-                    <td class="message-cell jp-translation">Sorry about that!</td>
-                    <td class="message-cell original-en">Yeah, sux 2 b u!</td>
-                    <td class="message-cell localization">Yeah yeah it’s bad. You done gossiping?</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis"><img src="images/noctis.png" alt="N" /></div>
+                                    <div class="speaker speaker-noctis">Noctis<span class="username">†Prince†</span></div>
+                                </td>
+                                <td class="message-cell original-jp">悪かったな！</td>
+                                <td class="message-cell jp-translation">Sorry about that!</td>
+                                <td class="message-cell original-en">Yeah, sux 2 b u!</td>
+                                <td class="message-cell localization">Yeah yeah it’s bad. You done gossiping?</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto"><img src="images/prompto.png" alt="P" /></div>
-                        <div class="speaker speaker-prompto">Prompto<span class="username">LOKTON</span></div>
-                    </td>
-                    <td class="message-cell original-jp">しっかり応えてんじゃんw</td>
-                    <td class="message-cell jp-translation">He’s answering properly, isn’t he? lol</td>
-                    <td class="message-cell original-en">Still awake? LOL</td>
-                    <td class="message-cell localization">Still awake? LOL</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-<section id="may15" class="conversation">
-    <div class="date-header">May 15th, M.E. 756</div>
-    <h2 class="conversation-title">Of the Round Table</h2>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto"><img src="images/prompto.png" alt="P" /></div>
+                                    <div class="speaker speaker-prompto">Prompto<span class="username">LOKTON</span></div>
+                                </td>
+                                <td class="message-cell original-jp">しっかり応えてんじゃんw</td>
+                                <td class="message-cell jp-translation">He’s answering properly, isn’t he? lol</td>
+                                <td class="message-cell original-en">Still awake? LOL</td>
+                                <td class="message-cell localization">Still awake? LOL</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="may15" class="conversation">
+                <div class="date-header">May 15th, M.E. 756</div>
+                <h2 class="conversation-title">Of the Round Table</h2>
 
-    <div class="message-table-container active">
-        <table class="message-table">
-            <thead>
-                <tr>
-                    <th width="90px">Speaker</th>
-                    <th class="original-jp">Original Japanese</th>
-                    <th class="jp-translation">JP Translation</th>
-                    <th class="original-en">Original English</th>
-                    <th class="localization">Revised Localization</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto"><img src="images/prompto.png" alt="P" /></div>
-                        <div class="speaker speaker-prompto">Prompto<span class="username">LOKTON</span></div>
-                    </td>
-                    <td class="message-cell original-jp">キングスナイトって<br>「王の騎土」って意味だよね?<br>ノクトを守る騎土って考えたら、<br>オレたちみるみたいじゃない？</td>
-                    <td class="message-cell jp-translation">By the way, King’s Knight means knights of the king, right?<br>If you think about knights protecting Noct, doesn’t it seem like that’s us?</td>
-                    <td class="message-cell original-en">btw, i was thinking, aren’t the 3 of us like King’s Knights for Noct?</td>
-                    <td class="message-cell localization">so i was thinking, aren’t the 3 of us like King’s Knights for Noct? Knights protecting the king?</td>
-                </tr>
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-gladio"><img src="images/gladio.png" alt="G" /></div>
-                        <div class="speaker speaker-gladio">Gladio<span class="username">Henruit</span></div>
-                    </td>
-                    <td class="message-cell original-jp">いや、オレたちの場合は「キングスナイト」じゃなくて「プリンスナイト」だな</td>
-                    <td class="message-cell jp-translation">In our case, we wouldn’t be “king’s knights”, we’d be “prince’s knights”.</td>
-                    <td class="message-cell original-en">No, in that case, we should be called “Prince’s Knights”</td>
-                    <td class="message-cell localization">Nah we’d prly be called the Prince’s Knights instead.</td>
-                </tr>
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-noctis"><img src="images/noctis.png" alt="N" /></div>
-                        <div class="speaker speaker-noctis">Noctis<span class="username">†Prince†</span></div>
-                    </td>
-                    <td class="message-cell original-jp">なんだかダゼェ...<br>そのうちキングになるっつーの</td>
-                    <td class="message-cell jp-translation">That's kind of lame. I’ll become king before long, won’t I?</td>
-                    <td class="message-cell original-en">That sounds so lame! Just say ur King’s Knightz! I’ll be king soon enuf</td>
-                    <td class="message-cell localization">Lame! Just say King’s Knights. I’ll be king soon enough!</td>
-                </tr>
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-ignis"><img src="images/ignis.png" alt="I" /></div>
-                        <div class="speaker speaker-ignis">Ignis<span class="username">Ignis</span></div>
-                    </td>
-                    <td class="message-cell original-jp">ノクト、そろそろ寝た方がいい<br>明日はレギス陛下にお会いした後オルティシエに向かうことになっている陛下の前で寝不そk</td>
-                    <td class="message-cell jp-translation">Noct, you should go to sleep soon.<br>We’re heading to Altissia after meeting with King Regis tomorrow. It would be dsrspctful to fall asleep in front of His Majesty.</td>
-                    <td class="message-cell original-en">Noct, u should get some sleep now. Tomorrow, u must meet with the King before heading 2 Altissia, u must not b</td>
-                    <td class="message-cell localization">Noct, you should get some sleep. We’re heading to Altissia after meeting with King Regis tomorrow. It would be rude to fall asleep in front of His Majesty.</td>
-                </tr>
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-noctis"><img src="images/noctis.png" alt="N" /></div>
-                        <div class="speaker speaker-noctis">Noctis<span class="username">†Prince†</span></div>
-                    </td>
-                    <td class="message-cell original-jp">はいはいはいはい!</td>
-                    <td class="message-cell jp-translation">OKOKOKOK!</td>
-                    <td class="message-cell original-en">Finefinefinefine</td>
-                    <td class="message-cell localization">Finefinefinefine</td>
-                </tr>
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto"><img src="images/prompto.png" alt="P" /></div>
-                        <div class="speaker speaker-prompto">Prompto<span class="username">LOKTON</span></div>
-                    </td>
-                    <td class="message-cell original-jp">イグニス文字打のはやっｗｗｗ<br>陛下はぁ...オレ,緊張するなぁ</td>
-                    <td class="message-cell jp-translation">Ignis, you type quickly, lol. Meeting with the king, huh?...I’m nervous, y’know.</td>
-                    <td class="message-cell original-en">Wow, Ignis u type FAST LOL<br>Meeting with the King, huh….now why should I be nervous about that…?</td>
-                    <td class="message-cell localization">Wow, Ignis u type FAST 😨🤣<br>Meeting with the King, huh…I’m kinda nervous</td>
-                </tr>
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-gladio"><img src="images/gladio.png" alt="G" /></div>
-                        <div class="speaker speaker-gladio">Gladio<span class="username">Henruit</span></div>
-                    </td>
-                    <td class="message-cell original-jp">だな、陛下の前で恥さらすなよ<br>そろそろ寝るか</td>
-                    <td class="message-cell jp-translation">Right. Don’t act up. Are you going to sleep soon?</td>
-                    <td class="message-cell original-en">Be on ur best behavior!<br>Now everybody go to bed!</td>
-                    <td class="message-cell localization">Be on ur best behavior!<br>Now everybody go to bed!</td>
-                </tr>
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-noctis"><img src="images/noctis.png" alt="N" /></div>
-                        <div class="speaker speaker-noctis">Noctis<span class="username">†Prince†</span></div>
-                    </td>
-                    <td class="message-cell original-jp">ああ<br>明日から、よろしく頼むわ!</td>
-                    <td class="message-cell jp-translation">Yeah. Starting tomorrow, let’s have fun together!</td>
-                    <td class="message-cell original-en">Yeah<br>Talk 2 u all tomorrow</td>
-                    <td class="message-cell localization">Yeah<br>Talk tmrw</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-<section id="may16" class="conversation">
-    <div class="date-header">May 16th, M.E. 756</div>
-    <h2 class="conversation-title">Commoner Life</h2>
+                <div class="message-table-container active">
+                    <table class="message-table">
+                        <thead>
+                            <tr>
+                                <th width="90px">Speaker</th>
+                                <th class="original-jp">Original Japanese</th>
+                                <th class="jp-translation">JP Translation</th>
+                                <th class="original-en">Original English</th>
+                                <th class="localization">Revised Localization</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto"><img src="images/prompto.png" alt="P" /></div>
+                                    <div class="speaker speaker-prompto">Prompto<span class="username">LOKTON</span></div>
+                                </td>
+                                <td class="message-cell original-jp">キングスナイトって<br>「王の騎土」って意味だよね?<br>ノクトを守る騎土って考えたら、<br>オレたちみるみたいじゃない？</td>
+                                <td class="message-cell jp-translation">By the way, King’s Knight means knights of the king, right?<br>If you think about knights protecting Noct, doesn’t it seem like that’s us?</td>
+                                <td class="message-cell original-en">btw, i was thinking, aren’t the 3 of us like King’s Knights for Noct?</td>
+                                <td class="message-cell localization">so i was thinking, aren’t the 3 of us like King’s Knights for Noct? Knights protecting the king?</td>
+                            </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-gladio"><img src="images/gladio.png" alt="G" /></div>
+                                    <div class="speaker speaker-gladio">Gladio<span class="username">Henruit</span></div>
+                                </td>
+                                <td class="message-cell original-jp">いや、オレたちの場合は「キングスナイト」じゃなくて「プリンスナイト」だな</td>
+                                <td class="message-cell jp-translation">In our case, we wouldn’t be “king’s knights”, we’d be “prince’s knights”.</td>
+                                <td class="message-cell original-en">No, in that case, we should be called “Prince’s Knights”</td>
+                                <td class="message-cell localization">Nah we’d prly be called the Prince’s Knights instead.</td>
+                            </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis"><img src="images/noctis.png" alt="N" /></div>
+                                    <div class="speaker speaker-noctis">Noctis<span class="username">†Prince†</span></div>
+                                </td>
+                                <td class="message-cell original-jp">なんだかダゼェ...<br>そのうちキングになるっつーの</td>
+                                <td class="message-cell jp-translation">That's kind of lame. I’ll become king before long, won’t I?</td>
+                                <td class="message-cell original-en">That sounds so lame! Just say ur King’s Knightz! I’ll be king soon enuf</td>
+                                <td class="message-cell localization">Lame! Just say King’s Knights. I’ll be king soon enough!</td>
+                            </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-ignis"><img src="images/ignis.png" alt="I" /></div>
+                                    <div class="speaker speaker-ignis">Ignis<span class="username">Ignis</span></div>
+                                </td>
+                                <td class="message-cell original-jp">ノクト、そろそろ寝た方がいい<br>明日はレギス陛下にお会いした後オルティシエに向かうことになっている陛下の前で寝不そk</td>
+                                <td class="message-cell jp-translation">Noct, you should go to sleep soon.<br>We’re heading to Altissia after meeting with King Regis tomorrow. It would be dsrspctful to fall asleep in front of His Majesty.</td>
+                                <td class="message-cell original-en">Noct, u should get some sleep now. Tomorrow, u must meet with the King before heading 2 Altissia, u must not b</td>
+                                <td class="message-cell localization">Noct, you should get some sleep. We’re heading to Altissia after meeting with King Regis tomorrow. It would be rude to fall asleep in front of His Majesty.</td>
+                            </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis"><img src="images/noctis.png" alt="N" /></div>
+                                    <div class="speaker speaker-noctis">Noctis<span class="username">†Prince†</span></div>
+                                </td>
+                                <td class="message-cell original-jp">はいはいはいはい!</td>
+                                <td class="message-cell jp-translation">OKOKOKOK!</td>
+                                <td class="message-cell original-en">Finefinefinefine</td>
+                                <td class="message-cell localization">Finefinefinefine</td>
+                            </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto"><img src="images/prompto.png" alt="P" /></div>
+                                    <div class="speaker speaker-prompto">Prompto<span class="username">LOKTON</span></div>
+                                </td>
+                                <td class="message-cell original-jp">イグニス文字打のはやっｗｗｗ<br>陛下はぁ...オレ,緊張するなぁ</td>
+                                <td class="message-cell jp-translation">Ignis, you type quickly, lol. Meeting with the king, huh?...I’m nervous, y’know.</td>
+                                <td class="message-cell original-en">Wow, Ignis u type FAST LOL<br>Meeting with the King, huh….now why should I be nervous about that…?</td>
+                                <td class="message-cell localization">Wow, Ignis u type FAST 😨🤣<br>Meeting with the King, huh…I’m kinda nervous</td>
+                            </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-gladio"><img src="images/gladio.png" alt="G" /></div>
+                                    <div class="speaker speaker-gladio">Gladio<span class="username">Henruit</span></div>
+                                </td>
+                                <td class="message-cell original-jp">だな、陛下の前で恥さらすなよ<br>そろそろ寝るか</td>
+                                <td class="message-cell jp-translation">Right. Don’t act up. Are you going to sleep soon?</td>
+                                <td class="message-cell original-en">Be on ur best behavior!<br>Now everybody go to bed!</td>
+                                <td class="message-cell localization">Be on ur best behavior!<br>Now everybody go to bed!</td>
+                            </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis"><img src="images/noctis.png" alt="N" /></div>
+                                    <div class="speaker speaker-noctis">Noctis<span class="username">†Prince†</span></div>
+                                </td>
+                                <td class="message-cell original-jp">ああ<br>明日から、よろしく頼むわ!</td>
+                                <td class="message-cell jp-translation">Yeah. Starting tomorrow, let’s have fun together!</td>
+                                <td class="message-cell original-en">Yeah<br>Talk 2 u all tomorrow</td>
+                                <td class="message-cell localization">Yeah<br>Talk tmrw</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="may16" class="conversation">
+                <div class="date-header">May 16th, M.E. 756</div>
+                <h2 class="conversation-title">Life of a Commoner</h2>
 
-    <div class="message-table-container active">
-        <table class="message-table">
-            <thead>
-                <tr>
-                    <th width="90px">Speaker</th>
-                    <th class="original-jp">Original Japanese</th>
-                    <th class="jp-translation">JP Translation</th>
-                    <th class="original-en">Original English</th>
-                    <th class="localization">Revised Localization</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto">
-                            <img src="images/prompto.png" alt="P" />
-                        </div>
-                        <div class="speaker speaker-prompto">
-                            Prompto
-                            <span class="username">LOKTON</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">ー般市民から一国の王子様に質問です!</td>
-                    <td class="message-cell jp-translation">A question from an average citizen for the country's prince!</td>
-                    <td class="message-cell original-en">A question to crown prince from an average citizen!</td>
-                    <td class="message-cell localization">Question to the crown prince from an average citizen!</td>
-                </tr>
+                <div class="message-table-container active">
+                    <table class="message-table">
+                        <thead>
+                            <tr>
+                                <th width="90px">Speaker</th>
+                                <th class="original-jp">Original Japanese</th>
+                                <th class="jp-translation">JP Translation</th>
+                                <th class="original-en">Original English</th>
+                                <th class="localization">Revised Localization</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto">
+                                        <img src="images/prompto.png" alt="P" />
+                                    </div>
+                                    <div class="speaker speaker-prompto">
+                                        Prompto
+                                        <span class="username">LOKTON</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">ー般市民から一国の王子様に質問です!</td>
+                                <td class="message-cell jp-translation">A question from an average citizen for the country's prince!</td>
+                                <td class="message-cell original-en">A question to crown prince from an average citizen!</td>
+                                <td class="message-cell localization">Question to the crown prince from an average citizen!</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-noctis">
-                           <img src="images/noctis.png" alt="N" />
-                        </div>
-                        <div class="speaker speaker-noctis">
-                            Noctis
-                            <span class="username">†Prince†</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">なんだそりゃ</td>
-                    <td class="message-cell jp-translation">What's all this?</td>
-                    <td class="message-cell original-en">wth is this all about then</td>
-                    <td class="message-cell localization">What's this all a sudden</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis">
+                                        <img src="images/noctis.png" alt="N" />
+                                    </div>
+                                    <div class="speaker speaker-noctis">
+                                        Noctis
+                                        <span class="username">†Prince†</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">なんだそりゃ</td>
+                                <td class="message-cell jp-translation">What's all this?</td>
+                                <td class="message-cell original-en">wth is this all about then</td>
+                                <td class="message-cell localization">What's this all a sudden</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto">
-                            <img src="images/prompto.png" alt="P" />
-                        </div>
-                        <div class="speaker speaker-prompto">
-                            Prompto
-                            <span class="username">LOKTON</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">ノクトって昔からゲーム好きだけど<br>城にいた時もゲームやってたの？そんな<br>ノクトも認めてくる<br>レギス陛下ってお<br>おおらかな方なのかな～と思って</td>
-                    <td class="message-cell jp-translation">You've liked games for a long time, but did you play like this when you were at the palace, too?<br>If King Regis allowed it, I feel like he's an understanding person.</td>
-                    <td class="message-cell original-en">U've been a gamer for as long as I remember, but did u play like this at the castle 2? If so, King Regis is…very understanding</td>
-                    <td class="message-cell localization">You've been a gaymer for a looong time but like…did you play this much when u lived at the citadel? If so, King Regis is a very cool guy…</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto">
+                                        <img src="images/prompto.png" alt="P" />
+                                    </div>
+                                    <div class="speaker speaker-prompto">
+                                        Prompto
+                                        <span class="username">LOKTON</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">ノクトって昔からゲーム好きだけど<br>城にいた時もゲームやってたの？そんな<br>ノクトも認めてくる<br>レギス陛下ってお<br>おおらかな方なのかな～と思って</td>
+                                <td class="message-cell jp-translation">You've liked games for a long time, but did you play like this when you were at the palace, too?<br>If King Regis allowed it, I feel like he's an understanding person.</td>
+                                <td class="message-cell original-en">U've been a gamer for as long as I remember, but did u play like this at the castle 2? If so, King Regis is…very understanding</td>
+                                <td class="message-cell localization">You've been a gaymer for a looong time but like…did you play this much when u lived at the citadel? If so, King Regis is a very cool guy…</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-ignis">
-                            <img src="images/ignis.png" alt="I" />
-                        </div>
-                        <div class="speaker speaker-ignis">
-                            Ignis
-                            <span class="username">Ignis</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">それほどでもなかったと思うが…<br>ゲームばかりやるようになったのは<br>一人暮らしをしてからか<br>まぁもともとレギス陛下はお優しい方だからな</td>
-                    <td class="message-cell jp-translation">I remember it not being quite like that. Didn't he only start playing games when he started living alone?<br>But even still, that was because King Regis is a kind person.</td>
-                    <td class="message-cell original-en">It really only started when he began living alone, altho King Regis was indeed a very kind soul</td>
-                    <td class="message-cell localization">I believe it was more once he started living alone, but his Majesty has always been a benevolent soul.</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-ignis">
+                                        <img src="images/ignis.png" alt="I" />
+                                    </div>
+                                    <div class="speaker speaker-ignis">
+                                        Ignis
+                                        <span class="username">Ignis</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">それほどでもなかったと思うが…<br>ゲームばかりやるようになったのは<br>一人暮らしをしてからか<br>まぁもともとレギス陛下はお優しい方だからな</td>
+                                <td class="message-cell jp-translation">I remember it not being quite like that. Didn't he only start playing games when he started living alone?<br>But even still, that was because King Regis is a kind person.</td>
+                                <td class="message-cell original-en">It really only started when he began living alone, altho King Regis was indeed a very kind soul</td>
+                                <td class="message-cell localization">I believe it was more once he started living alone, but his Majesty has always been a benevolent soul.</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-gladio">
-                            <img src="images/gladio.png" alt="G" />
-                        </div>
-                        <div class="speaker speaker-gladio">
-                            Gladio
-                            <span class="username">Henruit</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">つーか、なんでお前が答えてんだよ!<br>確かに、城にいた時は割と真面目な？王子だった、ような気もするな？</td>
-                    <td class="message-cell jp-translation">Hey, why are you answering? Lol<br>It definitely had to be because when Noct was in the palace, he gave the impression? Of being a relatively serious prince?</td>
-                    <td class="message-cell original-en">Why r u answering?lol<br>Though I suppose when Noct was @ the castle he was kind of? An exemplary? Prince?</td>
-                    <td class="message-cell localization">Iggy y are u answering for him lol<br>But I guess it's cause Noct was kinda sorta a serious prince when he was at the citadel?</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-gladio">
+                                        <img src="images/gladio.png" alt="G" />
+                                    </div>
+                                    <div class="speaker speaker-gladio">
+                                        Gladio
+                                        <span class="username">Henruit</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">つーか、なんでお前が答えてんだよ!<br>確かに、城にいた時は割と真面目な？王子だった、ような気もするな？</td>
+                                <td class="message-cell jp-translation">Hey, why are you answering? Lol<br>It definitely had to be because when Noct was in the palace, he gave the impression? Of being a relatively serious prince?</td>
+                                <td class="message-cell original-en">Why r u answering?lol<br>Though I suppose when Noct was @ the castle he was kind of? An exemplary? Prince?</td>
+                                <td class="message-cell localization">Iggy y are u answering for him lol<br>But I guess it's cause Noct was kinda sorta a serious prince when he was at the citadel?</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-noctis">
-                           <img src="images/noctis.png" alt="N" />
-                        </div>
-                        <div class="speaker speaker-noctis">
-                            Noctis
-                            <span class="username">†Prince†</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">おい！「？」多すぎんだろう！プロンプトがゲーム勧めてきたせいで！</td>
-                    <td class="message-cell jp-translation">Hey! That's too many ?s!<br>It's Prompto's fault for getting me into them.</td>
-                    <td class="message-cell original-en">That 2 many ?s!!!<br>Anyway, it's all Prompto's fault for dragging me into his world.</td>
-                    <td class="message-cell localization">Hey!! "Sort of"??<br>It's Prompto's fault for getting me into mobile games</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis">
+                                        <img src="images/noctis.png" alt="N" />
+                                    </div>
+                                    <div class="speaker speaker-noctis">
+                                        Noctis
+                                        <span class="username">†Prince†</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">おい！「？」多すぎんだろう！プロンプトがゲーム勧めてきたせいで！</td>
+                                <td class="message-cell jp-translation">Hey! That's too many ?s!<br>It's Prompto's fault for getting me into them.</td>
+                                <td class="message-cell original-en">That 2 many ?s!!!<br>Anyway, it's all Prompto's fault for dragging me into his world.</td>
+                                <td class="message-cell localization">Hey!! "Sort of"??<br>It's Prompto's fault for getting me into mobile games</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto">
-                            <img src="images/prompto.png" alt="P" />
-                        </div>
-                        <div class="speaker speaker-prompto">
-                            Prompto
-                            <span class="username">LOKTON</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">ブホシシｗｗｗｗｗ<br>オレのせいでしたかｗｗｗ</td>
-                    <td class="message-cell jp-translation">Boohoo!!! lololololol<br>It was my fault? lolol</td>
-                    <td class="message-cell original-en">LOLOL<br>So it's my fault now???</td>
-                    <td class="message-cell localization">😂😂🤣<br>So it's my fault now???<br>🤣</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto">
+                                        <img src="images/prompto.png" alt="P" />
+                                    </div>
+                                    <div class="speaker speaker-prompto">
+                                        Prompto
+                                        <span class="username">LOKTON</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">ブホシシｗｗｗｗｗ<br>オレのせいでしたかｗｗｗ</td>
+                                <td class="message-cell jp-translation">Boohoo!!! lololololol<br>It was my fault? lolol</td>
+                                <td class="message-cell original-en">LOLOL<br>So it's my fault now???</td>
+                                <td class="message-cell localization">😂😂🤣<br>So it's my fault now???<br>🤣</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-gladio">
-                            <img src="images/gladio.png" alt="G" />
-                        </div>
-                        <div class="speaker speaker-gladio">
-                            Gladio
-                            <span class="username">Henruit</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">城の中にもっても堅苦しいからな<br>民の気持ちもわかるような王になってほしいとレギス陛下お考えだったのだろう<br>おかげでー般市民と大佐なくなったけどなｗ</td>
-                    <td class="message-cell jp-translation">Because when he was shut up in the palace, it was formal and strict there. King Regis probably wanted him to become a king who knew what it felt like to be a member of the public. Thanks to that, he's gotten to the point where there's no difference between him and the average citizen, lol.</td>
-                    <td class="message-cell original-en">I believe the King did not want his son to be holed up in some stuffy castle all the time<br>altho the result was that Noct pretty much became like the rest of us lol</td>
-                    <td class="message-cell localization">I think King Regis didn't want him to be holed up inside all the time in that formal setting, but these days there's no difference between him and average citizen lol</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-gladio">
+                                        <img src="images/gladio.png" alt="G" />
+                                    </div>
+                                    <div class="speaker speaker-gladio">
+                                        Gladio
+                                        <span class="username">Henruit</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">城の中にもっても堅苦しいからな<br>民の気持ちもわかるような王になってほしいとレギス陛下お考えだったのだろう<br>おかげでー般市民と大佐なくなったけどなｗ</td>
+                                <td class="message-cell jp-translation">Because when he was shut up in the palace, it was formal and strict there. King Regis probably wanted him to become a king who knew what it felt like to be a member of the public. Thanks to that, he's gotten to the point where there's no difference between him and the average citizen, lol.</td>
+                                <td class="message-cell original-en">I believe the King did not want his son to be holed up in some stuffy castle all the time<br>altho the result was that Noct pretty much became like the rest of us lol</td>
+                                <td class="message-cell localization">I think King Regis didn't want him to be holed up inside all the time in that formal setting, but these days there's no difference between him and average citizen lol</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-noctis">
-                           <img src="images/noctis.png" alt="N" />
-                        </div>
-                        <div class="speaker speaker-noctis">
-                            Noctis
-                            <span class="username">†Prince†</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">ゼルの樹溜まった!</td>
-                    <td class="message-cell jp-translation">I've harvested my Zell tree!!</td>
-                    <td class="message-cell original-en">Zell tree's full!</td>
-                    <td class="message-cell localization">Zell tree harvested!</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis">
+                                        <img src="images/noctis.png" alt="N" />
+                                    </div>
+                                    <div class="speaker speaker-noctis">
+                                        Noctis
+                                        <span class="username">†Prince†</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">ゼルの樹溜まった!</td>
+                                <td class="message-cell jp-translation">I've harvested my Zell tree!!</td>
+                                <td class="message-cell original-en">Zell tree's full!</td>
+                                <td class="message-cell localization">Zell tree harvested!</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto">
-                            <img src="images/prompto.png" alt="P" />
-                        </div>
-                        <div class="speaker speaker-prompto">
-                            Prompto
-                            <span class="username">LOKTON</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">ゼルのが樹がリアルにあったらいいのにねー<br>そしたら好きなもの買えるじゃん</td>
-                    <td class="message-cell jp-translation">It'd be nice if Zell trees were real. Then we could buy things we wanted, couldn't we?</td>
-                    <td class="message-cell original-en">Wouldn't it be gr8 if they really existed?<br>Then we could just buy whatever we want.</td>
-                    <td class="message-cell localization">Wouldn't it be great if Zell trees really existed? We could buy whatever we wanted.</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto">
+                                        <img src="images/prompto.png" alt="P" />
+                                    </div>
+                                    <div class="speaker speaker-prompto">
+                                        Prompto
+                                        <span class="username">LOKTON</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">ゼルのが樹がリアルにあったらいいのにねー<br>そしたら好きなもの買えるじゃん</td>
+                                <td class="message-cell jp-translation">It'd be nice if Zell trees were real. Then we could buy things we wanted, couldn't we?</td>
+                                <td class="message-cell original-en">Wouldn't it be gr8 if they really existed?<br>Then we could just buy whatever we want.</td>
+                                <td class="message-cell localization">Wouldn't it be great if Zell trees really existed? We could buy whatever we wanted.</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-gladio">
-                            <img src="images/gladio.png" alt="G" />
-                        </div>
-                        <div class="speaker speaker-gladio">
-                            Gladio
-                            <span class="username">Henruit</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">で、ゼルの樹があって金が入ったら何かほしいもんでもああるんのか？</td>
-                    <td class="message-cell jp-translation">If you got money from the Zell tree, what would you want to buy?</td>
-                    <td class="message-cell original-en">What would u buy with all that zell tree money?</td>
-                    <td class="message-cell localization">And what would you buy w/ all that money</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-gladio">
+                                        <img src="images/gladio.png" alt="G" />
+                                    </div>
+                                    <div class="speaker speaker-gladio">
+                                        Gladio
+                                        <span class="username">Henruit</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">で、ゼルの樹があって金が入ったら何かほしいもんでもああるんのか？</td>
+                                <td class="message-cell jp-translation">If you got money from the Zell tree, what would you want to buy?</td>
+                                <td class="message-cell original-en">What would u buy with all that zell tree money?</td>
+                                <td class="message-cell localization">And what would you buy w/ all that money</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto">
-                            <img src="images/prompto.png" alt="P" />
-                        </div>
-                        <div class="speaker speaker-prompto">
-                            Prompto
-                            <span class="username">LOKTON</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">オレはねー</td>
-                    <td class="message-cell jp-translation">Hmm, I --</td>
-                    <td class="message-cell original-en">Umm…</td>
-                    <td class="message-cell localization">Uhhhh</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto">
+                                        <img src="images/prompto.png" alt="P" />
+                                    </div>
+                                    <div class="speaker speaker-prompto">
+                                        Prompto
+                                        <span class="username">LOKTON</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">オレはねー</td>
+                                <td class="message-cell jp-translation">Hmm, I --</td>
+                                <td class="message-cell original-en">Umm…</td>
+                                <td class="message-cell localization">Uhhhh</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-noctis">
-                           <img src="images/noctis.png" alt="N" />
-                        </div>
-                        <div class="speaker speaker-noctis">
-                            Noctis
-                            <span class="username">†Prince†</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">新しいルアー</td>
-                    <td class="message-cell jp-translation">A new lure</td>
-                    <td class="message-cell original-en">A new lure</td>
-                    <td class="message-cell localization">A new lure</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-noctis">
+                                        <img src="images/noctis.png" alt="N" />
+                                    </div>
+                                    <div class="speaker speaker-noctis">
+                                        Noctis
+                                        <span class="username">†Prince†</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">新しいルアー</td>
+                                <td class="message-cell jp-translation">A new lure</td>
+                                <td class="message-cell original-en">A new lure</td>
+                                <td class="message-cell localization">A new lure</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto">
-                            <img src="images/prompto.png" alt="P" />
-                        </div>
-                        <div class="speaker speaker-prompto">
-                            Prompto
-                            <span class="username">LOKTON</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">オレが答えるとこぅ！<br>だからさ毎回聞くけどそのノクトの釣りに賭ける熱意なんなの !?</td>
-                    <td class="message-cell jp-translation">I can answer!<br>And I ask this every time, but why do you like fishing so much?</td>
-                    <td class="message-cell original-en">He was asking me!<br>And what is it with u and fishing anyway?</td>
-                    <td class="message-cell localization">He was asking me! And why the heck do you like fishing so much?</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto">
+                                        <img src="images/prompto.png" alt="P" />
+                                    </div>
+                                    <div class="speaker speaker-prompto">
+                                        Prompto
+                                        <span class="username">LOKTON</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">オレが答えるとこぅ！<br>だからさ毎回聞くけどそのノクトの釣りに賭ける熱意なんなの !?</td>
+                                <td class="message-cell jp-translation">I can answer!<br>And I ask this every time, but why do you like fishing so much?</td>
+                                <td class="message-cell original-en">He was asking me!<br>And what is it with u and fishing anyway?</td>
+                                <td class="message-cell localization">He was asking me! And why the heck do you like fishing so much?</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-ignis">
-                            <img src="images/ignis.png" alt="I" />
-                        </div>
-                        <div class="speaker speaker-ignis">
-                            Ignis
-                            <span class="username">Ignis</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">ルアーもいいが食村がないと困るぞ<br>だが、事実をみるんだな、今日も金欠だ</td>
-                    <td class="message-cell jp-translation">Lures are nice, but we'll be in trouble if we don't have food.<br>However, facing the facts, we have no money.</td>
-                    <td class="message-cell original-en">Lures are good, but food is even more good.<br>But time to face facts: Today is another day without money</td>
-                    <td class="message-cell localization">Lures are nice, but we'll be quite screwed if we don't have food.<br>Let's face the facts: we are broke.</td>
-                </tr>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-ignis">
+                                        <img src="images/ignis.png" alt="I" />
+                                    </div>
+                                    <div class="speaker speaker-ignis">
+                                        Ignis
+                                        <span class="username">Ignis</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">ルアーもいいが食村がないと困るぞ<br>だが、事実をみるんだな、今日も金欠だ</td>
+                                <td class="message-cell jp-translation">Lures are nice, but we'll be in trouble if we don't have food.<br>However, facing the facts, we have no money.</td>
+                                <td class="message-cell original-en">Lures are good, but food is even more good.<br>But time to face facts: Today is another day without money</td>
+                                <td class="message-cell localization">Lures are nice, but we'll be quite screwed if we don't have food.<br>Let's face the facts: we are broke.</td>
+                            </tr>
 
-                <tr class="message-row">
-                    <td class="avatar-cell">
-                        <div class="avatar avatar-prompto">
-                            <img src="images/prompto.png" alt="P" />
-                        </div>
-                        <div class="speaker speaker-prompto">
-                            Prompto
-                            <span class="username">LOKTON</span>
-                        </div>
-                    </td>
-                    <td class="message-cell original-jp">……地のなかって世知幸いね<br>その前拾たさびた金属片でも売りに行きますかー</td>
-                    <td class="message-cell jp-translation">The world is a cruel place.<br>Should I go sell this rusted bit I found a while back?</td>
-                    <td class="message-cell original-en">Oh what a world…<br>Maybe I'll go sell that rusted bit I found the other day…</td>
-                    <td class="message-cell localization">Goodbye, cruel world!<br>Should I go sell the rusted bit I found a couple days ago?</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
+                            <tr class="message-row">
+                                <td class="avatar-cell">
+                                    <div class="avatar avatar-prompto">
+                                        <img src="images/prompto.png" alt="P" />
+                                    </div>
+                                    <div class="speaker speaker-prompto">
+                                        Prompto
+                                        <span class="username">LOKTON</span>
+                                    </div>
+                                </td>
+                                <td class="message-cell original-jp">……地のなかって世知幸いね<br>その前拾たさびた金属片でも売りに行きますかー</td>
+                                <td class="message-cell jp-translation">The world is a cruel place.<br>Should I go sell this rusted bit I found a while back?</td>
+                                <td class="message-cell original-en">Oh what a world…<br>Maybe I'll go sell that rusted bit I found the other day…</td>
+                                <td class="message-cell localization">Goodbye, cruel world!<br>Should I go sell the rusted bit I found a couple days ago?</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
         </main>
     </div>
 
     <footer>
-        <p>FFXV King's Knight Messages for the FFXV Discord<br>
-        Translation by Umbrella of Glass | Localization by SI_Vaer "Silver"</p>
+        <p>
+            <strong>FFXV King's Knight Messages</strong><br>
+            Display template by SI_Vaer. Unauthorized reuse is prohibited without express permission.
+        </p>
+        <p><a href="mailto:vae.7194@gmail.com" style="color: inherit; text-decoration: none;">vae.7194@gmail.com</a></p>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Handle navigation toggle
             const navToggle = document.querySelector('.nav-toggle');
-            const dateNav = document.querySelector('.date-nav');
+            const sectionNav = document.querySelector('.section-nav');
             const contentWrapper = document.querySelector('.content-wrapper');
 
-            // Start with navigation collapsed
-            dateNav.classList.add('collapsed');
+            // Start with quick navigation collapsed
+            sectionNav.classList.add('collapsed');
 
-            navToggle.addEventListener('click', function() {
-                dateNav.classList.toggle('collapsed');
+            navToggle.addEventListener('click', function () {
+                sectionNav.classList.toggle('collapsed');
                 contentWrapper.classList.toggle('pushed');
                 navToggle.classList.toggle('in-place');
 
                 const icon = navToggle.querySelector('.nav-toggle-icon');
                 const text = navToggle.querySelector('.nav-toggle-text');
 
-                if (!dateNav.classList.contains('collapsed')) {
+                if (!sectionNav.classList.contains('collapsed')) {
                     icon.textContent = '✕';
                     text.textContent = 'Close';
                 } else {
@@ -1555,7 +1590,7 @@
                 const column = toggle.dataset.column;
                 updateColumnVisibility(column, toggle.checked);
 
-                toggle.addEventListener('change', function() {
+                toggle.addEventListener('change', function () {
                     updateColumnVisibility(this.dataset.column, this.checked);
                 });
             });
@@ -1576,7 +1611,7 @@
             // Handle conversation title expanding/collapsing
             const conversationTitles = document.querySelectorAll('.conversation-title');
             conversationTitles.forEach(title => {
-                title.addEventListener('click', function() {
+                title.addEventListener('click', function () {
                     this.classList.toggle('collapsed');
                     const tableContainer = this.nextElementSibling;
                     tableContainer.classList.toggle('active');
@@ -1585,7 +1620,7 @@
 
             // Expand/collapse all button
             const expandAllBtn = document.querySelector('.expand-all-btn');
-            expandAllBtn.addEventListener('click', function() {
+            expandAllBtn.addEventListener('click', function () {
                 const action = this.dataset.action;
                 const titles = document.querySelectorAll('.conversation-title');
                 const containers = document.querySelectorAll('.message-table-container');
