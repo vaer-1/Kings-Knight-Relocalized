@@ -4,3 +4,6 @@ In-game message board and direct messages, containing original Japanes and Engli
 
 JP Translation by Umbrella of Glass
 Relocalization by SI_Vaer
+
+For inquiries regarding translations between Japanese, French, Spanish, and English, you can contact Umbrella of Glass at:
+umbrellaofglass.translations@gmail.com
