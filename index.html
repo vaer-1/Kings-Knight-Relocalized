@@ -42,13 +42,6 @@
         }
 
         @media (max-width: 768px) {
-            th.original-jp,
-            td.original-jp,
-            th.original-en,
-            td.original-en {
-                display: none;
-            }
-
             .message-cell {
                 word-break: break-word;
                 overflow-wrap: break-word;
@@ -1546,8 +1539,8 @@
         <p>
             <strong>FFXV King's Knight Messages</strong><br>
             Display template by SI_Vaer. Unauthorized reuse is prohibited without express permission.
-        </p>
-        <p><a href="mailto:vae.7194@gmail.com" style="color: inherit; text-decoration: none;">vae.7194@gmail.com</a></p>
+        </p><br />
+        <p><a href="mailto:umbrellaofglass.translations@gmail.com" style="color: inherit; text-decoration: none;">umbrellaofglass.translations@gmail.com</a> || <a href="mailto:vae.7194@gmail.com" style="color: inherit; text-decoration: none;">vae.7194@gmail.com</a></p>
     </footer>
 
     <script>
@@ -1645,6 +1638,25 @@
                     this.textContent = 'Expand All';
                 }
             });
+        });
+
+        function setMobileColumnDefaults() {
+            if (window.innerWidth <= 768) {
+                document.querySelectorAll('.column-toggle').forEach(toggle => {
+                    const column = toggle.dataset.column;
+                    if (column === 'jp-translation' || column === 'localization') {
+                        toggle.checked = true;
+                    } else {
+                        toggle.checked = false;
+                    }
+                    updateColumnVisibility(column, toggle.checked);
+                });
+            }
+        }
+
+        setMobileColumnDefaults();
+        window.addEventListener('resize', function () {
+            setMobileColumnDefaults();
         });
     </script>
 </body>
