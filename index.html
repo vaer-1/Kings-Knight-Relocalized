@@ -1638,25 +1638,22 @@
                     this.textContent = 'Expand All';
                 }
             });
-        });
 
-        function setMobileColumnDefaults() {
-            if (window.innerWidth <= 768) {
-                document.querySelectorAll('.column-toggle').forEach(toggle => {
-                    const column = toggle.dataset.column;
-                    if (column === 'jp-translation' || column === 'localization') {
-                        toggle.checked = true;
-                    } else {
-                        toggle.checked = false;
-                    }
-                    updateColumnVisibility(column, toggle.checked);
-                });
+            function setMobileColumnDefaults() {
+                if (window.innerWidth <= 768) {
+                    toggles.forEach(toggle => {
+                        const column = toggle.dataset.column;
+                        if (column === 'jp-translation' || column === 'localization') {
+                            toggle.checked = true;
+                        } else {
+                            toggle.checked = false;
+                        }
+                        updateColumnVisibility(column, toggle.checked);
+                    });
+                }
             }
-        }
-
-        setMobileColumnDefaults();
-        window.addEventListener('resize', function () {
             setMobileColumnDefaults();
+            window.addEventListener('resize', setMobileColumnDefaults);
         });
     </script>
 </body>
